@@ -8,9 +8,9 @@ The SQL Database file is **movietalkat1.sql** and it's under **func** folder.
 
 ## Weekly works
 
-* Module 1: Introduction to Web Environments, Architecture of Web Applications & Protocols
+- [x]  Module 1: Introduction to Web Environments, Architecture of Web Applications & Protocols
 Focus on deploying your development environment and familiarising yourself with it. Make sure you know how to start/stop Apache and MySQL, where code files go, how to request files from your server via your browser… Become familiar with the process of editing a file, saving it and then reloading it in your browser. Read the assignment brief a few times so that you have it in mind in future modules.
-* Module 2: Database Design for Web Applications
+- [x]  Module 2: Database Design for Web Applications
 Now that you’ve covered the creation of databases in phpMyAdmin, try to create the database you will need for the assignment. It is detailed in the assignment brief. Insert some sample data into the tables if you wish. Also spend some time getting familiar with using phpMyAdmin to administer your database.
 * Module 3: Forms, Form Processing & Validation
 Now that you’ve covered forms and validation, look through the assignment brief and identify all of the major forms – e.g. registration forms, log in forms, forms to create things… Create the forms in HTML files and write JavaScript code to validate them. Don’t worry about the forms not being connected to anything at this stage. Spend some time working on the overall structure of your site/system at this stage – all of the database-driven parts can have placeholders for now. Just flesh out the main pages and get the links between them working.
