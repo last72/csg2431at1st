@@ -40,6 +40,16 @@ $_SESSION['last_login_timestamp'] = time();
 </head>
 <body>
 	<h1>Index page</h1>
+	<p>
+		<?php
+			//display the session here
+			echo 'Welcom, '.$_SESSION['uname'].'';
+			if((time() - $_SESSION['last_login_timestamp']) > 900) // 900 = 15 * 60 (15 Mins)
+			{
+				header("location:logout.php");
+			}
+		?>
+	</p>
 	<a href="logout.php">Logout</a></li>
 </body>
 </html>
