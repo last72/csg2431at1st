@@ -1,7 +1,7 @@
 <?php
 define('DBHOST', 'localhost');
 define('DBUSER', 'root');
-define('DBPASS', 't00r');
+define('DBPASS', '');
 define('DBNAME', 'movietalkat1');
 class Database
 {
