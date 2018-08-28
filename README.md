@@ -19,7 +19,7 @@ Now that you’ve covered forms and validation, look through the assignment brie
 
 ### Module 4: Form, Web & Database Interaction
 Now that you’ve covered database interaction, you can really start to work on the functional parts of the assignment. Having the forms, database and general structure of the site will really pay off now, since most of what you need to do is add the code to interact with the database (select, insert, update, delete).
-* Woongyeol - Sign up page, movie registration page
+* Woongyeol - Sign up page, movie registration page (Insert new data works)
 * Tash - comment leaving, sign in page, Search page
 
 ### Module 5: Control Structures, Calculations & Date/Time Values
