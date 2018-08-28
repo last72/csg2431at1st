@@ -1,13 +1,5 @@
-<?php
-  // connect to database
-  @ $db = new mysqli('localhost', 'root', '', 'movietalkat1');
-  
-  if (mysqli_connect_error())
-  {  // display the details of any connection errors
-	  echo 'Error connecting to database:<br />'.mysqli_connect_error();
-	  exit;
-  }
-?>
+<?php include '../func/dbconnection.php';?>
+
 <!DOCTYPE html>
 <html>
 <head>
