@@ -1,3 +1,13 @@
+<?php
+  // connect to database
+  @ $db = new mysqli('localhost', 'root', '', 'movietalkat1');
+  
+  if (mysqli_connect_error())
+  {  // display the details of any connection errors
+	  echo 'Error connecting to database:<br />'.mysqli_connect_error();
+	  exit;
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,6 +58,22 @@
     //  if there was no error, show success message
     // (and them the script continues to the HTML section that displays the results)
     echo '<p><strong>Form submitted sucessfully!</strong></p>';
+
+    $query = "INSERT INTO movies VALUE (NULL, '".$moviename."', '".$release_year."',
+  '".$director."', '".$writers."', '".$duration."', '".$summary."')";
+
+
+  $result = $db->query($query);
+
+  if ($result)
+	{
+		echo '<p>Movie details inserted into database!</p>';
+	}
+	else
+	{
+		echo '<p>Error inserting details. Error message:</p>';
+		echo '<p>'.$db->error.'</p>';
+  }
   }
 ?>
 
