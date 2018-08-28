@@ -1,3 +1,13 @@
+<?php
+  // connect to database
+  @ $db = new mysqli('localhost', 'root', '', 'movietalkat1');
+  
+  if (mysqli_connect_error())
+  {  // display the details of any connection errors
+	  echo 'Error connecting to database:<br />'.mysqli_connect_error();
+	  exit;
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,13 +16,15 @@
 
 <body>
 <?php
-	//create short variable names from the data received from the form
+  //create short variable names from the data received from the form
+  $username = $_POST['username'];
 	$firstname = $_POST['firstname'];
 	$surname = $_POST['surname'];
 	$birth_year = $_POST['birth_year'];
 	$emailAddress = $_POST['emailAddress'];
-	$password = $_POST['password']; 
-    $confirmPassword = $_POST['confirmPassword'];
+  $country = $_POST['country'];
+  $password = $_POST['password'];
+  $confirmPassword = $_POST['confirmPassword'];
   
   // we create this variable and set it to an empty string... if it remains empty by the end
   // of our validation code, then there was no error found
@@ -66,6 +78,23 @@
     //  if there was no error, show success message
     // (and them the script continues to the HTML section that displays the results)
     echo '<p><strong>Form submitted sucessfully!</strong></p>';
+
+  $query = "INSERT INTO users VALUE ('".$username."', '".$firstname."' + '".$surname."',
+  '".$emailAddress."', '".$birth_year."', '".$country."', '".$password."', '1')";
+
+
+  $result = $db->query($query);
+
+  if ($result)
+	{
+		echo '<p>User details inserted into database!</p>';
+	}
+	else
+	{
+		echo '<p>Error inserting details. Error message:</p>';
+		echo '<p>'.$db->error.'</p>';
+  }
+  
   }
 ?>
 
@@ -97,7 +126,16 @@
       <td> 
         <?php echo $emailAddress; ?></td>
     </tr>
-
+    <tr style="background-color: #FFFFFF;"> 
+      <td>country</td>
+      <td> 
+        <?php echo $country; ?></td>
+    </tr>
+    <tr style="background-color: #FFFFFF;"> 
+      <td>username</td>
+      <td> 
+        <?php echo $username; ?></td>
+    </tr>
     <tr style="background-color: #FFFFFF;"> 
       <td>Password</td>
       <td> 
