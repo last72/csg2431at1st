@@ -66,6 +66,7 @@
         <div align="right">* indicates required field</div></td>
     </tr>
   </table>
+  <a href="javascript: history.back();">Go Back</a>
 </form>
 </body>
 </html>

@@ -141,5 +141,6 @@
         <?php echo $confirmPassword; ?></td>
     </tr>
   </table>
+  <a href="../">Go Home</a>
 </body>
 </html>

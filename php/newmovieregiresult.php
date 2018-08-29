@@ -111,5 +111,6 @@
         <?php echo $summary; ?></td>
     </tr>
   </table>
+  <a href="../">Go Home</a>
 </body>
 </html>
