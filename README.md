@@ -39,3 +39,11 @@ While some of the content in this module is likely to be useful in the second as
 ## Acknowledgments
 
 * Xammp are used in developing.
+
+
+# Problems
+* in php/newmovieregiresult.php, I couldn't put result to database as we changed the connection code to func/dbconnedtion.php I just addedd 
+```
+@ $db = new mysqli('localhost', 'root', '', 'movietalkat1');
+```
+as temporary solution. 
