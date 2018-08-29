@@ -1,1 +1,3 @@
-dbconnection.php
+func/dbconnection.php
+func\dbconnection.php
+*dbconnection*
