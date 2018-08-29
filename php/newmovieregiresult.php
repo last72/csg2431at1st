@@ -1,4 +1,7 @@
 <?php include '../func/dbconnection.php';?>
+<?php 
+  @ $db = new mysqli('localhost', 'root', '', 'movietalkat1');
+  ?>
 <!DOCTYPE html>
 <html>
 <head>
