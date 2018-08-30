@@ -1,6 +1,7 @@
 <?php include '../func/dbconnection.php';?>
 <?php   // connect to database
   @ $db = new mysqli('localhost', 'root', '', 'movietalkat1');
+  
   ?>
 <!DOCTYPE html>
 <html>
@@ -21,12 +22,11 @@
   if (isset($_GET['del_id']))
   {
 	  
-	  $del_query = 'DELETE FROM userdetails WHERE UserRecID = '.$_GET['del_id'];
+	  $del_query = 'DELETE FROM users WHERE username = '.$_GET['del_id'];
 	  $del_results = $db->query($del_query);
   }
   
-  $query = "SELECT * FROM userdetails AS u JOIN positions AS p ON u.PositionID = p.PositionID
-  JOIN departments AS d ON u.DeptID = d.DeptID ORDER BY Surname";
+  $query = "SELECT * FROM users ORDER BY username";
   
   // execute the query
   $results = $db->query($query);
@@ -49,9 +49,9 @@
       echo '<td>'.$row['country'].'</td>';
       echo '<td>'.$row['access_level'].'</td>';
 
-	  echo '<td><a href="editUser.php?edit_id='.$row['UserRecID'].'">Edit</a> ';
-	  echo '<a href="listUsers.php?del_id='.$row['UserRecID'].'"
-	  onclick="return confirm(\'“Are you sure you want to delete this user?\');">Delete</a></td></tr>';
+	  echo '<td><a href="editUser.php?edit_id='.$row['username'].'">Edit</a> ';
+	  echo '<a href="listUsers.php?del_id='.$row['username'].'"
+	  onclick="return confirm(\'Are you sure you want to delete this user?\');">Delete</a></td></tr>';
   }
   echo '</table>';
   ?>
