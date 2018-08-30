@@ -59,12 +59,12 @@
 	  	<!-- END OF NAVIATION -->
 
 			<a class="dropdown-item" href="php/registration.php">New User</a>
-		          <a class="dropdown-item" href="php/listUsers">List User</a>
-		          <a class="dropdown-item" href="php/editUser">Edit User</a>
+		          <a class="dropdown-item" href="php/listUsers.php">List User</a>
+		          <a class="dropdown-item" href="php/editUser.php">Edit User</a>
 		          <div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="php/newmovieregi.php">New Movie</a>
-							<a class="dropdown-item" href="php/listMovies">List Movie</a>
-		          <a class="dropdown-item" href="php/editMovie">Edit Movie</a>
+							<a class="dropdown-item" href="php/listMovies.php">List Movie</a>
+		          <a class="dropdown-item" href="php/editMovie.php">Edit Movie</a>
     	<h1>DISPLAY ALL MOVIES HERE!!!</h1>
 
 			
