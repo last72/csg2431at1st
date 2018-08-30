@@ -47,3 +47,6 @@ While some of the content in this module is likely to be useful in the second as
 @ $db = new mysqli('localhost', 'root', '', 'movietalkat1');
 ```
 as temporary solution. 
+
+# Regarding to Assessement
+* Hasing and securing password is extra mark in assessment. not required though.
