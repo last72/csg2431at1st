@@ -1,7 +1,6 @@
 <?php include '../func/dbconnection.php';?>
 <?php   // connect to database
   @ $db = new mysqli('localhost', 'root', '', 'movietalkat1');
-  
   ?>
 <!DOCTYPE html>
 <html>
@@ -21,8 +20,8 @@
   //  delete user if del_id GET data exists
   if (isset($_GET['del_id']))
   {
-	  
-	  $del_query = 'DELETE FROM users WHERE username = '.$_GET['del_id'];
+	  echo 'Delete in progress';
+	  $del_query = 'DELETE FROM users WHERE username = \''.$_GET['del_id'].'\'';
 	  $del_results = $db->query($del_query);
   }
   

@@ -5,14 +5,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>List Users</title>
+  <title>List Movies</title>
   <style type="text/css">
     th,td {border: 1px solid black; width: 150px;}
   </style>
 </head>
 
 <body>
-<h2><strong>List User</strong></h2>
+<h2><strong>List Movies</strong></h2>
 
 
 
