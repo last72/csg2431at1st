@@ -50,3 +50,9 @@ as temporary solution.
 
 # Regarding to Assessement
 * Hasing and securing password is extra mark in assessment. not required though.
+* grap avarage birth year from database and suggest as recommendation.
+* Dropdown list for countries
+
+# Solved issues
+* $del_query = 'DELETE FROM users WHERE username = \''.$_GET['del_id'].'\'';
+ * the username need to be covered in '' because it's string. a number do not require that.
