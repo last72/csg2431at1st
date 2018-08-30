@@ -41,7 +41,7 @@
   //  loop through the result and display them
   while ($row = $results->fetch_assoc())
   {
-      echo '<td>'.$row['movie_id'].'</td>';
+      echo '<td>'.$row['movie_name'].'</td>';
       echo '<td>'.$row['release_year'].'</td>';
       echo '<td>'.$row['director'].'</td>';
       echo '<td>'.$row['writers'].'</td>';
