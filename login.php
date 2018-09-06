@@ -95,9 +95,7 @@
                 </fieldset>
                 </form>
             </div>
-            <div class="col-sm-8">
-                <img class="testimg" src="img/LOGO2.png" alt="Testing Logo" width="500px" height="500px">
-            </div>
+            
         </div> 
 
 
