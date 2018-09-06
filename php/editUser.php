@@ -1,8 +1,17 @@
-<?php include '../func/dbconnection.php';?>
+<?php 
+//Start or resume a session
+session_start();
+include '../func/dbconnection.php';?>
 <?php
   // connect to database
   @ $db = new mysqli('localhost', 'root', '', 'movietalkat1');
   
+  if ( $_SESSION['level'] != 'admin' )
+{
+  header('Location: ../index.php');
+  exit;
+}
+
   // process submitted form
   if (isset($_POST['firstname']))
  

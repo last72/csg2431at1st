@@ -1,3 +1,16 @@
+<?php
+//Start or resume a session
+session_start();
+
+  if ( $_SESSION['level'] != 'admin' )
+  {
+    header('Location: ../index.php');
+    exit;
+  }
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

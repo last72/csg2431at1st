@@ -1,3 +1,15 @@
+<?php
+//Start or resume a session
+session_start();
+
+  if ( $_SESSION['level'] != 'admin' )
+  {
+    header('Location: ../index.php');
+    exit;
+  }
+
+
+?>
 <?php include '../func/dbconnection.php';?>
 <?php   // connect to database
   @ $db = new mysqli('localhost', 'root', '', 'movietalkat1');
