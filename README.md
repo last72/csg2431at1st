@@ -24,9 +24,9 @@ Now that you’ve covered database interaction, you can really start to work on 
 This week covers more database interaction and some general coding concepts. Continue working on the functional parts of the assignment. Remember to test everything thoroughly, and spend time making sure you understand what each line of code does, rather than blindly copy-pasting lines of code from various places.
 ### Module 6: Sessions, State Management & User Authentication
 Now that you’ve covered sessions, you can implement them in your assignment to control access to authorised users. Remember to be consistent and thorough in how you implement sessions.
-~~* Create a login page that requests an email address (as the username) and password, checks them against the database, sets appropriate session variables, and redirects to a main menu / home page.~~
-~~* Check session variables to ensure that the main menu / home page and other pages (e.g. ones to add, edit and delete users) can only be accessed by people who have logged in.~~
-~~* Add a logout page which destroys the session data and redirects the user to the login page.  Add a link to the logout page to all pages requiring the user to be logged in (see goal 2).~~
+* ~~Create a login page that requests an email address (as the username) and password, checks them against the database, sets appropriate session variables, and redirects to a main menu / home page.~~
+* ~~Check session variables to ensure that the main menu / home page and other pages (e.g. ones to add, edit and delete users) can only be accessed by people who have logged in.~~
+* ~~Add a logout page which destroys the session data and redirects the user to the login page.  Add a link to the logout page to all pages requiring the user to be logged in (see goal 2).~~
 * ~~Add an access level field to your database's userdetails table, and give any existing users an access level of 'admin', 'editor' or 'guest'.~~  Restrict access to the register and delete page to admin only, the edit page to editor or admin only, and all other pages available to all access levels.
 ### Module 7: Advanced State Management & User/Event Tracking
 While some of the content in this module is likely to be useful in the second assignment, it won’t introduce anything necessary in assignment 1. Spend the week finalising your assignment code and consider adding extra features or functionality if you can
@@ -36,7 +36,7 @@ While some of the content in this module is likely to be useful in the second as
 ## Authors
 
 * **Woongyeol Choi** - *Web Developer* - [last72](https://github.com/last72/)
-* **Tashi Duks** - *Web Developer* - [last72](https://github.com/TashiDuks)
+* **Tashi Duks** - *Web Developer* - [TashiDuks](https://github.com/TashiDuks)
 
 ## Acknowledgments
 
