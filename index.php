@@ -35,16 +35,19 @@
 		        </a>
 		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						  <a class="dropdown-item" href="php/registration.php">New User</a>
-		          <a class="dropdown-item" href="php/listUsers">List User</a>
-		          <a class="dropdown-item" href="php/editUser">Edit User</a>
+		          <a class="dropdown-item" href="php/listUsers.php">List User</a>
+		          <a class="dropdown-item" href="php/editUser.php">Edit User</a>
 		          <div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="php/newmovieregi.php">New Movie</a>
-							<a class="dropdown-item" href="php/listMovies">List Movie</a>
-		          <a class="dropdown-item" href="php/editMovie">Edit Movie</a>
+							<a class="dropdown-item" href="php/listMovies.php">List Movie</a>
+		          <a class="dropdown-item" href="php/editMovie.php">Edit Movie</a>
 							</div>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="#">Sign In</a>
+		        <a class="nav-link" href="login.php">Sign In</a>
+					<li class="nav-item">
+          </li>
+						<a class="nav-link" href="logout.php">Sign Out</a>
 		      </li>
 		       <li class="nav-item">
 		        <a class="nav-link" href="php/registration.php">Register</a>
@@ -58,13 +61,11 @@
 		</nav>
 	  	<!-- END OF NAVIATION -->
 
+			<?php include 'php/usermenu.php'; ?>
 
 
 
 
-		<div class="class="col-sm-4">
-			<?php include 'login.php';?>
-    </div>
     </div>
     <!-- END OF CONTAINER -->
 
