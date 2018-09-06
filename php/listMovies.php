@@ -53,6 +53,8 @@
 	  onclick="return confirm(\'Are you sure you want to delete this user?\');">Delete</a></td></tr>';
   }
   echo '</table>';
+
+  echo '<a href="../index.php">Back to Home</a>';
   ?>
   
   </body>
