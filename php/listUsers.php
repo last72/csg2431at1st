@@ -66,6 +66,7 @@ session_start();
   }
   echo '</table>';
   echo '<a href="../index.php">Back to Home</a>';
+  echo '<a href="../logout.php">Sign Out</a>';
 
   ?>
   

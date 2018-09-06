@@ -63,5 +63,6 @@ session_start();
   </table>
   <a href="javascript: history.back();">Go Back</a>
 </form>
+<?php   echo '<a href="../logout.php">Sign Out</a>';?>
 </body>
 </html>

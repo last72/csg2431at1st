@@ -155,6 +155,8 @@ include '../func/dbconnection.php';?>
     </tr>
   </table>
   <a href="javascript: history.back();">Go Back</a>
+  <?php echo '<a href="../logout.php">Sign Out</a>'; ?>
+
 </form>
 </body>
 </html>
