@@ -52,6 +52,8 @@ as temporary solution.
 * Hasing and securing password is extra mark in assessment. not required though.
 * grap avarage birth year from database and suggest as recommendation.
 * Dropdown list for countries
+* the access level need to be check in every webpage. Like delete function need to be activated only to admin even if they type in get variables in url.
+* Even if they don't have link to function or page, they can still directly access to it.
 
 # Solved issues
 * $del_query = 'DELETE FROM users WHERE username = \''.$_GET['del_id'].'\'';
