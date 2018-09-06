@@ -56,3 +56,6 @@ as temporary solution.
 # Solved issues
 * $del_query = 'DELETE FROM users WHERE username = \''.$_GET['del_id'].'\'';
  * the username need to be covered in '' because it's string. a number do not require that.
+
+# Sitemap diagram
+![Sitemap](/img/diagram.png?raw=true "Sitemap")
