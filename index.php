@@ -50,8 +50,8 @@
 		        <a class="nav-link" href="php/registration.php">Register</a>
 		      </li>
 		    </ul>
-		    <form class="form-inline my-2 my-lg-0">
-		      <input class="form-control mr-sm-2" type="search" placeholder="Search movies" aria-label="Search">
+		    <form class="form-inline my-2 my-lg-0" method="get" action="php/searchMovies.php">
+		      <input class="form-control mr-sm-2" type="search" placeholder="Search movies" aria-label="Search" name="serach_item">
 		      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 		    </form>
 		  </div>
