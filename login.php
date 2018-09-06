@@ -22,7 +22,7 @@
     session_start();
 
     //If the "uname" session variable is set and not empty, redirect to menu page
-    if ( isset($_SESSION['tusername']) && $_SESSION['tusername'] != '' )
+    if ( isset($_SESSION['uname']) && $_SESSION['uname'] != '' )
     {
         header('Location: index.php');
         exit;
