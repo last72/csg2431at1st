@@ -63,3 +63,4 @@ as temporary solution.
 
 # Sitemap diagram
 ![Sitemap](/img/diagram.png?raw=true "Sitemap")
+![Sitemap](/img/sitemapexample.png?raw=true "exampleSitemap")
