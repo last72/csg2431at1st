@@ -6,7 +6,7 @@ include '../func/dbconnection.php';?>
   // connect to database
   @ $db = new mysqli('localhost', 'root', '', 'movietalkat1');
 
-  if ( $_SESSION['level'] != 'admin' )
+  if (!( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'editor' ))
 {
   header('Location: ../index.php');
   exit;

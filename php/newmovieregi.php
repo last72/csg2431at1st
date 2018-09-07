@@ -2,8 +2,8 @@
 //Start or resume a session
 session_start();
 
-  if ( $_SESSION['level'] != 'admin' )
-  {
+  if (!( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'editor' ))
+{
     header('Location: ../index.php');
     exit;
   }
