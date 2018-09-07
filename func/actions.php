@@ -35,6 +35,16 @@
 			}
 			return $array;
 		}
+		/* Search Movies */
+		public function searchMovie($table,$keyword){
+			$sql = "SELECT movies.movie_id, movies.movie_name, movies.release_year, movies.director, sum(ratings.rating) FROM ".$table." INNER JOIN ratings ON movies.movie_id = ratings.movie_id WHERE movies.movie_name like '%".$keywords."%' GROUP BY movies.movie_id";
+			$query = mysqli_query($this->strConn,$sql);
+			$array = array();
+			while($row = mysqli_fetch_assoc($query)){
+				$array[] = $row;
+			}
+			return $arrray;
+		}
 	}
 	$obj = new DataOperation;
 

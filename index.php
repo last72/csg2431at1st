@@ -29,32 +29,18 @@
 		      <li class="nav-item active">
 		        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
 		      </li>
-		      <li class="nav-item dropdown">
-		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          Editing Dropdown [dev purpose]
-		        </a>
-		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						  <a class="dropdown-item" href="php/registration.php">New User</a>
-		          <a class="dropdown-item" href="php/listUsers.php">List User</a>
-		          <a class="dropdown-item" href="php/editUser.php">Edit User</a>
-		          <div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="php/newmovieregi.php">New Movie</a>
-							<a class="dropdown-item" href="php/listMovies.php">List Movie</a>
-		          <a class="dropdown-item" href="php/editMovie.php">Edit Movie</a>
-							</div>
-		      </li>
 		      <li class="nav-item">
 		        <a class="nav-link" href="login.php">Sign In</a>
-					<li class="nav-item">
-          </li>
-						<a class="nav-link" href="logout.php">Sign Out</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="logout.php">Sign Out</a>
 		      </li>
 		       <li class="nav-item">
 		        <a class="nav-link" href="php/registration.php">Register</a>
 		      </li>
 		    </ul>
-		    <form class="form-inline my-2 my-lg-0" method="get" action="php/searchMovies.php">
-		      <input class="form-control mr-sm-2" type="search" placeholder="Search movies" aria-label="Search" name="serach_item">
+		    <form class="form-inline my-2 my-lg-0" method="get" action="">
+		      <input class="form-control mr-sm-2" type="search" placeholder="Search movies" aria-label="Search" name="serach_item" required />
 		      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 		    </form>
 		  </div>
