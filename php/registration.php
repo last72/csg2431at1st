@@ -2,11 +2,12 @@
 <html>
 <head>
   <title>User Registration Form</title>
+  <link rel="stylesheet" type="text/css" href="css/validation.css">
 </head>
 
 <body>
 <h2><strong>New User Details</strong></h2>
-<form name="newUserForm" method="post" action="registrationresult.php">
+<form name="newUserForm" method="post" action="registrationresult.php"  onsubmit="return ValidateForm();">
   <table style="width: 500px; border: 0px;" cellspacing="1" cellpadding="1">
   <tr>
       <td colspan="2"><strong>Login Details</strong></td>
@@ -14,17 +15,17 @@
   <tr style="background-color: #FFFFFF;"> 
       <td>Username</td>
       <td> 
-        <input name="username" type="text" style="width: 200px;" maxlength="100" />*</td>
+        <input name="username" type="text" style="width: 200px;" maxlength="100" required/>*</td>
     </tr>
     <tr style="background-color: #FFFFFF;"> 
       <td>Password</td>
       <td> 
-        <input name="password" type="password" style="width: 200px;" maxlength="20" />*</td>
+        <input name="password" type="password" style="width: 200px;" maxlength="20" required/>*</td>
     </tr>
     <tr style="background-color: #FFFFFF;"> 
       <td>Confirm Password</td>
       <td> 
-        <input name="confirmPassword" type="password" style="width: 200px;" maxlength="20" />*</td>
+        <input name="confirmPassword" type="password" style="width: 200px;" maxlength="20" required/>*</td>
     </tr>
     <tr>
       <td colspan="2">&nbsp;</td>
