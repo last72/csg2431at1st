@@ -25,13 +25,11 @@
   $error_message = '';
 
   // first we'll check if any of our required fields are empty all at once
-  if (empty($firstname) || empty($surname) || empty($emailAddress) || empty($password) || empty($confirmPassword))
+  if (empty($username) || empty($birth_year) || empty($emailAddress) || empty($password) || empty($confirmPassword))
   {
     $error_message = 'One of the required values was  blank.';
   }
 
-    
-  
   // now we'll check if the password is long enough
   elseif (strlen($password) < 5)
   {
@@ -54,10 +52,6 @@
     $error_message = 'Your home birth year is not numeric';
   }
   
-   
-
-   
-
   // if the error_message variable is not empty (i.e. an error has been found)
   if ($error_message != '')
   {
