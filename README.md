@@ -62,5 +62,8 @@ as temporary solution.
  * the username need to be covered in '' because it's string. a number do not require that.
 
 # Sitemap diagram
+Current Sitemap
 ![Sitemap](/img/diagram.png?raw=true "Sitemap")
+
+Example Sitemap
 ![Sitemap](/img/sitemapexample.png?raw=true "exampleSitemap")
