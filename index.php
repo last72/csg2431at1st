@@ -60,11 +60,39 @@
 		  </div>
 		</nav>
 	  	<!-- END OF NAVIATION -->
-
-			<?php include 'php/usermenu.php'; ?>
-
-
-
+	  	<!-- Movie Listing goes here -->
+	  	<h1>DISPLAY ALL MOVIES HERE!!!</h1>
+	  	<form method="post" action="./func/actions.php">
+	  		<table class="table table-bordered">
+	    		<tr>
+	    			<th>Movie ID</th>
+	    			<th>Title</th>
+	    			<th>Released On</th>
+	    			<th>Director</th>
+	    			<th>Rate</th>
+	    			<th>&nbsp;</th>
+	    		</tr>
+	    		<?php
+	    			//record fetch function call
+	    			$myrow = $obj->fetch_record("movies");
+	    			foreach ($myrow as $row){
+	    				?>
+	    				<!-- Fill Table with record -->
+	    				<tr>
+	    					<td><?php echo $row["movie_id"]; ?></td>
+	    					<td><?php echo $row["movie_name"]; ?></td>
+	    					<td><?php echo $row["release_year"]; ?></td>
+	    					<td><?php echo $row["director"]; ?></td>
+	    					<td><?php //echo $row["sum(ratings.rating)"]; ?></td>
+	    					<td>learn more</td>
+	    				</tr>
+	    				<?php
+	    			}
+	    		?>
+	    	</table>
+		  	</form>
+    	
+	  	<!-- End of Movie Listing -->
 
     </div>
     <!-- END OF CONTAINER -->
