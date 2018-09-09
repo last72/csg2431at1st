@@ -20,7 +20,7 @@ session_start();
 
 <body>
 <h2><strong>New Movie Details</strong></h2>
-<form name="newMovieForm" method="post" action="newmovieregiresult.php" onsubmit="return ValidateForm();">
+<form name="newMovieForm" method="post" action="newmovieregiresult.php" onsubmit="return ValidateMovieForm();">
   <table style="width: 500px; border: 0px;" cellspacing="1" cellpadding="1">
   <tr>
       <td colspan="2"><strong>Movie Details</strong></td>
