@@ -326,7 +326,7 @@
     <tr style="background-color: #FFFFFF;"> 
       <td>Email Address</td>
       <td> 
-        <input name="emailAddress" type="text" style="width: 200px;" maxlength="200" required/>*</td>
+        <input name="emailAddress" type="email" style="width: 200px;" maxlength="200" required/>*</td>
     </tr>
     <tr style="background-color: #FFFFFF;"> 
       <td> 
