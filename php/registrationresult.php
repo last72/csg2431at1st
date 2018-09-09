@@ -51,8 +51,44 @@
   {
     $error_message = 'Your home birth year is not numeric';
   }
-  
-  // now we'll check if the email addres already exists in the database
+
+  // now we'll check if the username is too long
+  elseif (strlen($username) > 100)
+  {
+    $error_message = 'Your username is too long.';
+  }
+
+  // now we'll check if the name is too long
+  elseif (strlen($firstname) + strlen($surname) > 50)
+  {
+    $error_message = 'Your name is too long.';
+  }
+
+  // now we'll check if the birth year is valid
+  elseif (strlen($birth_year) != '4')
+  {
+    $error_message = 'Your birth year is not valid.';
+  }
+
+ // now we'll check if the emailAddress is too long
+  elseif (strlen($emailAddress) > 100)
+  {
+    $error_message = 'Your emailAddress is too long.';
+  }
+
+  // now we'll check if the country name is too long
+  elseif (strlen($emailAddress) > 50)
+  {
+    $error_message = 'Your country name is too long.';
+  }
+
+  // now we'll check if the password is too long
+  elseif (strlen($password) > 50)
+  {
+    $error_message = 'Your password is too long.';
+  }
+
+  // now we'll check if the username already exists in the database
   $username_query = "SELECT username FROM users WHERE username = '".$username."'";
   $username_results = $db->query($username_query);
 
