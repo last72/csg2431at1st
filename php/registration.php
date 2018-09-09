@@ -25,12 +25,12 @@
     <tr style="background-color: #FFFFFF;"> 
       <td>Password</td>
       <td> 
-        <input name="password" type="password" style="width: 200px;" maxlength="20" required/>*</td>
+        <input name="password" type="password" style="width: 200px;" maxlength="50" required/>*</td>
     </tr>
     <tr style="background-color: #FFFFFF;"> 
       <td>Confirm Password</td>
       <td> 
-        <input name="confirmPassword" type="password" style="width: 200px;" maxlength="20" required/>*</td>
+        <input name="confirmPassword" type="password" style="width: 200px;" maxlength="50" required/>*</td>
     </tr>
     <tr>
       <td colspan="2">&nbsp;</td>
@@ -41,12 +41,12 @@
     <tr style="background-color: #FFFFFF;"> 
       <td>First Name</td>
       <td> 
-        <input name="firstname" type="text" style="width: 200px;" maxlength="100" /></td>
+        <input name="firstname" type="text" style="width: 200px;" maxlength="50" /></td>
     </tr>
     <tr style="background-color: #FFFFFF;"> 
       <td>Surname</td>
       <td> 
-        <input name="surname" type="text" style="width: 200px;" maxlength="100" /></td>
+        <input name="surname" type="text" style="width: 200px;" maxlength="50" /></td>
     </tr>
     <tr style="background-color: #FFFFFF;"> 
       <td>Birth year</td>
@@ -326,7 +326,7 @@
     <tr style="background-color: #FFFFFF;"> 
       <td>Email Address</td>
       <td> 
-        <input name="emailAddress" type="email" style="width: 200px;" maxlength="200" required/>*</td>
+        <input name="emailAddress" type="email" style="width: 200px;" maxlength="100" required/>*</td>
     </tr>
     <tr style="background-color: #FFFFFF;"> 
       <td> 
