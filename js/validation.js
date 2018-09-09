@@ -34,7 +34,17 @@ function ValidateUserForm()
 	    alert('Email Address field cannot be blank.');
 		document.newUserForm.emailAddress.focus();
 		return false;
-	  }
+		}
+		
+		//eamil validation
+		var emailstring = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		var emailvalidresult = emailstring.test(String(document.newUserForm.emailAddress.value).toLowerCase());
+		if (!emailvalidresult)
+	  {
+	    alert('Email Address is not valid.');
+		document.newUserForm.emailAddress.focus();
+		return false;
+		}
 	  
     if (document.newUserForm.password.value == '')
 	  {
