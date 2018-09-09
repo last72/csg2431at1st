@@ -1,6 +1,6 @@
 <?php include '../func/dbconnection.php';?>
 <?php 
-  @ $db = new mysqli('localhost', 'root', '', 'movietalkat1');
+  @ $db = new mysqli('localhost', 'root', 't00r', 'movietalkat1');
   ?>
 <!DOCTYPE html>
 <html>
@@ -52,6 +52,16 @@
     $error_message = 'Your home birth year is not numeric';
   }
   
+  // now we'll check if the email addres already exists in the database
+  $username_query = "SELECT username FROM users WHERE username = '".$username."'";
+  $username_results = $db->query($username_query);
+
+  if ($username_results->num_rows > 0)
+  {
+    $error_message = 'Your Username already exises, choose another.';
+  }
+
+  
   // if the error_message variable is not empty (i.e. an error has been found)
   if ($error_message != '')
   {
@@ -68,8 +78,7 @@
     echo '<p><strong>Form submitted sucessfully!</strong></p>';
 
   $query = "INSERT INTO users VALUE ('".$username."', '".$firstname."' + '".$surname."',
-  '".$emailAddress."', '".$birth_year."', '".$country."', '".$password."', '1')";
-
+  '".$emailAddress."', '".$birth_year."', '".$country."', '".$password."', 'member')";
 
   $result = $db->query($query);
 
