@@ -5,37 +5,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>List Movies</title>
+  <title>Movies Details</title>
   <style type="text/css">
     th,td {border: 1px solid black; width: 150px;}
   </style>
 </head>
 
 <body>
-<h2><strong>List Movies</strong></h2>
+<h2><strong>Movies Details</strong></h2>
 
 
 
 <?php
   //  delete user if del_id GET data exists
-  if (isset($_GET['del_id']))
+  if (isset($_GET['movie_id']))
   {
-	  
-	  $del_query = 'DELETE FROM movies WHERE movie_id = '.$_GET['del_id'];
-	  $del_results = $db->query($del_query);
-  }
-  
-  $query = "SELECT * FROM movies ORDER BY movie_name";
+  $query = "SELECT * FROM movies ".'WHERE movie_id ='.$_GET['movie_id'];
   
   // execute the query
   $results = $db->query($query);
-  
-  // show how many rows the query returned
-  echo '<p>'.$results->num_rows.' movies found.</p>';
+
   
   //start the table in which our user list will be shown
   echo '<table><tr>';
-  echo '<th>Movie name</th><th>Release year</th><th>Director</th><th>Writers</th><th>Duration</th><th>Summary</th><th>Manage</th>';
+  echo '<th>Movie name</th><th>Release year</th><th>Director</th><th>Writers</th><th>Duration</th><th>Summary</th>';
   echo '</tr>';
   
   //  loop through the result and display them
@@ -48,12 +41,10 @@
       echo '<td>'.$row['duration'].'</td>';
       echo '<td>'.$row['summary'].'</td>';
 
-      echo '<td><a href="movieDetails.php?movie_id='.$row['movie_id'].'">Details</a> ';
-      echo '<a href="editMovie.php?edit_id='.$row['movie_id'].'">Edit</a> ';
-      echo '<a href="listMovies.php?del_id='.$row['movie_id'].'"
-      onclick="return confirm(\'Are you sure you want to delete this user?\');">Delete</a></td></tr>';
+	  echo '</tr>';
   }
   echo '</table>';
+}
 
   echo '<a href="../index.php">Back to Home</a>';
   ?>
