@@ -22,7 +22,7 @@ session_start();
   </style>
 </head>
 <body>
-<h2><strong>List User</strong></h2>
+<h2><strong>User Details</strong></h2>
 
 <?php
   //  delete user if del_id GET data exists
