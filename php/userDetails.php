@@ -2,12 +2,11 @@
 //Start or resume a session
 session_start();
 
-  if ( $_SESSION['level'] != 'admin' )
+  if ( $_SESSION['level'] == '' )
   {
     header('Location: ../index.php');
     exit;
   }
-
 
 ?>
 <?php include '../func/dbconnection.php';?>
@@ -17,37 +16,29 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-  <title>List Users</title>
+  <title>User Details</title>
   <style type="text/css">
     th,td {border: 1px solid black; width: 150px;}
   </style>
 </head>
-
 <body>
 <h2><strong>List User</strong></h2>
 
-
-
 <?php
   //  delete user if del_id GET data exists
-  if (isset($_GET['del_id']))
+  if (isset($_GET['username']))
   {
-	  echo 'Delete in progress';
-	  $del_query = 'DELETE FROM users WHERE username = \''.$_GET['del_id'].'\'';
-	  $del_results = $db->query($del_query);
-  }
-  
-  $query = "SELECT * FROM users ORDER BY username";
+	  
+  $query = "SELECT * FROM users ".'WHERE username = \''.$_GET['username'].'\'';
   
   // execute the query
   $results = $db->query($query);
   
   // show how many rows the query returned
-  echo '<p>'.$results->num_rows.' users found.</p>';
   
   //start the table in which our user list will be shown
   echo '<table><tr>';
-  echo '<th>Username</th><th>Name</th><th>Email</th><th>Birth Year</th><th>Country</th><th>Access level</th><th>Manage</th>';
+  echo '<th>Username</th><th>Name</th><th>Email</th><th>Birth Year</th><th>Country</th><th>Access level</th>';
   echo '</tr>';
   
   //  loop through the result and display them
@@ -60,12 +51,11 @@ session_start();
       echo '<td>'.$row['country'].'</td>';
       echo '<td>'.$row['access_level'].'</td>';
 
-      echo '<td><a href="userDetails.php?username='.$row['username'].'"">Details</a> ';
-	    echo '<a href="editUser.php?edit_id='.$row['username'].'">Edit</a> ';
-	    echo '<a href="listUsers.php?del_id='.$row['username'].'"
-	    onclick="return confirm(\'Are you sure you want to delete this user?\');">Delete</a></td></tr>';
+	//   echo '</tr>';
   }
-  echo '</table>';
+  echo '</tr></table>';
+
+}
   echo '<a href="../index.php">Back to Home</a>';
   echo '<a href="../logout.php">Sign Out</a>';
 
