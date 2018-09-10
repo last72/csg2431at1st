@@ -46,16 +46,17 @@ While some of the content in this module is likely to be useful in the second as
 # Problems
 * in php/newmovieregiresult.php, I couldn't put result to database as we changed the connection code to func/dbconnedtion.php I just addedd 
 ```
-@ $db = new mysqli('localhost', 'root', '', 'movietalkat1');
+@ $db = new mysqli('localhost', 'root', 't00r', 'movietalkat1');
 ```
 as temporary solution. 
 
-# Regarding to Assessement
+# Regarding to Assessement, Requirements
 * Hasing and securing password is extra mark in assessment. not required though.
-* grap avarage birth year from database and suggest as recommendation.
-* Dropdown list for countries
-* the access level need to be check in every webpage. Like delete function need to be activated only to admin even if they type in get variables in url.
-* Even if they don't have link to function or page, they can still directly access to it.
+* ~~grap avarage birth year from database and suggest as recommendation.~~
+* ~~Dropdown list for countries~~
+* ~~the access level need to be check in every webpage. Like delete function need to be activated only to admin even if they type in get variables in url.~~
+* ~~Even if they don't have link to function or page, they can still directly access to it.~~
+* SQL injection protection.
 
 # Solved issues
 * $del_query = 'DELETE FROM users WHERE username = \''.$_GET['del_id'].'\'';
