@@ -4,7 +4,7 @@ session_start();
 include '../func/dbconnection.php';?>
 <?php
   // connect to database
-  @ $db = new mysqli('localhost', 'root', '', 'movietalkat1');
+  @ $db = new mysqli('localhost', 'root', 't00r', 'movietalkat1');
 
   if (!( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'editor' ))
 {
