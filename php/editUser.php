@@ -13,7 +13,7 @@ include '../func/dbconnection.php';?>
 }
 
   // process submitted form
-  if (isset($_POST['firstname']))
+  if (isset($_POST['username']))
  
  {
       //create short variable names from the data received from the form
@@ -21,9 +21,10 @@ include '../func/dbconnection.php';?>
     $password = $_POST['password']; 
     $confirmPassword = $_POST['confirmPassword'];
 
-	$firstname = $_POST['firstname'];
+  $firstname = $_POST['firstname'];
+  $surname = $_POST['surname'];
 	$birth_year = $_POST['birth_year'];
-    $country = $_POST['country'];
+  $country = $_POST['country'];
 	$emailAddress = $_POST['emailAddress'];
   
   // we create this variable and set it to an empty string... if it remains empty by the end
@@ -31,7 +32,7 @@ include '../func/dbconnection.php';?>
   $error_message = '';
 
   // first we'll check if any of our required fields are empty all at once
-  if (empty($firstname)  || empty($username) || empty($birth_year) || empty($country) ||
+  if (empty($username) || empty($birth_year) || empty($country) ||
   empty($password) || empty($confirmPassword))
   {
     $error_message = 'One of the required values was  blank.';
@@ -59,16 +60,48 @@ include '../func/dbconnection.php';?>
     $error_message = 'Your home birth year is not numeric';
   }
    
-   // now we'll check if the email addres already exists in the database
-   $email_query = "SELECT email FROM users WHERE email = 
- '".$emailAddress."' AND username !='".$_GET['edit_id'].'\'';
-   
-   $email_results = $db->query($email_query);
-   
-   if ($email_results->num_rows > 0)
-   {
-	   $error_message = 'Your email address already exises, choose another.';
-   }
+  // now we'll check if the username is too long
+  elseif (strlen($username) > 100)
+  {
+    $error_message = 'Your username is too long.';
+  }
+
+  // now we'll check if the name is too long
+  elseif (strlen($firstname) + strlen($surname) > 50)
+  {
+    $error_message = 'Your name is too long.';
+  }
+
+  // now we'll check if the birth year is valid
+  elseif (strlen($birth_year) != '4')
+  {
+    $error_message = 'Your birth year is not valid.';
+  }
+
+  // now we'll check if the emailAddress is too long
+  elseif (strlen($emailAddress) > 100)
+  {
+    $error_message = 'Your emailAddress is too long.';
+  }
+
+  // now we'll check if the country name is too long
+  elseif (strlen($emailAddress) > 50)
+  {
+    $error_message = 'Your country name is too long.';
+  }
+
+  // now we'll check if the password is too long
+  elseif (strlen($password) > 50)
+  {
+    $error_message = 'Your password is too long.';
+  }
+
+  // check the username is same
+  if ($username != $_GET['edit_id'])
+  {
+    $error_message = 'Your cannot change username';
+  }
+
 
   // if the error_message variable is not empty (i.e. an error has been found)
   if ($error_message != '')
@@ -86,9 +119,9 @@ include '../func/dbconnection.php';?>
     echo '<p><strong>Form submitted sucessfully!</strong></p>';
 	
 	
-	$query = "UPDATE users SET username = '".$username."', real_name = '".$firstname."' , birth_year = '".$birth_year."', email =
-	'".$emailAddress."', country = '".$country."', Password = '".$password."'
-	WHERE username = '".$_GET['edit_id'].'\'';
+	$query = "UPDATE users VALUE ('".$username."', '".$firstname."' + '".$surname."',
+  '".$emailAddress."', '".$birth_year."', '".$country."', '".$hashed_password."', 'member')
+	WHERE username = ".$_GET['edit_id'];
 	
 	$result = $db->query($query);
 	
@@ -137,7 +170,7 @@ include '../func/dbconnection.php';?>
 
 <body>
 <h2><strong>User Details</strong></h2>
-<form name="editUserForm" method="post" action="editUser.php?edit_id=<?php echo $_GET['edit_id']?>">
+<form name="newUserForm" method="post" action="editUser.php?edit_id=<?php echo $_GET['edit_id']?>" onsubmit="return ValidateUserForm();">
   
   <table style="width: 500px; border: 0px;" cellspacing="1" cellpadding="1">
   <tr>
@@ -147,7 +180,7 @@ include '../func/dbconnection.php';?>
       <td>Username</td>
       <td> 
         <input name="username" type="text" style="width: 200px;" maxlength="100" value="<?php echo
-		$row ['username']; ?>" />*</td>
+		$row ['username']; ?>" disabled/>*</td>
     </tr>
     <tr style="background-color: #FFFFFF;"> 
       <td>Password</td>
@@ -166,10 +199,14 @@ include '../func/dbconnection.php';?>
       <td colspan="2"><strong>Personal Details</strong></td>
     </tr>
     <tr style="background-color: #FFFFFF;"> 
-      <td>Name</td>
+      <td>First Name</td>
       <td> 
-        <input name="firstname" type="text" style="width: 200px;" maxlength="100" value="<?php echo
-		$row ['real_name']; ?>" />*</td>
+        <input name="firstname" type="text" style="width: 200px;" maxlength="50" /></td>
+    </tr>
+    <tr style="background-color: #FFFFFF;"> 
+      <td>Surname</td>
+      <td> 
+        <input name="surname" type="text" style="width: 200px;" maxlength="50" /></td>
     </tr>
     <tr style="background-color: #FFFFFF;"> 
       <td>Birth year</td>
