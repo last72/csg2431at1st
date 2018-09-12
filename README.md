@@ -61,6 +61,9 @@ as temporary solution.
 # Solved issues
 * $del_query = 'DELETE FROM users WHERE username = \''.$_GET['del_id'].'\'';
  * the username need to be covered in '' because it's string. a number do not require that.
+* ``` @ $db = new mysqli('localhost', 'root', 't00r', 'movietalkat1');``` is replaced with ```require '../func/dbconnection.php';``` and use ``` $result = mysqli_query($connection,$query);``` instead of ```$result = $db->query($query);```
+
+ 
 
 # Sitemap diagram
 Current Sitemap
