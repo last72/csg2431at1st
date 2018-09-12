@@ -13,8 +13,7 @@
 <?php
   //create short variable names from the data received from the form
   $username = $_POST['username'];
-	$firstname = $_POST['firstname'];
-	$surname = $_POST['surname'];
+	$realname = $_POST['realname'];
 	$birth_year = $_POST['birth_year'];
 	$emailAddress = $_POST['emailAddress'];
   $country = $_POST['country'];
@@ -60,7 +59,7 @@
   }
 
   // now we'll check if the name is too long
-  elseif (strlen($firstname) + strlen($surname) > 50)
+  elseif (strlen($realname) > 50)
   {
     $error_message = 'Your name is too long.';
   }
@@ -117,7 +116,7 @@
 
   $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-  $query = "INSERT INTO users VALUE ('".$username."', '".$firstname."' + '".$surname."',
+  $query = "INSERT INTO users VALUE ('".$username."', '".$realname."',
   '".$emailAddress."', '".$birth_year."', '".$country."', '".$hashed_password."', 'member')";
 
   //$result = $db->query($query);
@@ -143,16 +142,10 @@
       <td colspan="2"><strong>Personal Details</strong></td>
     </tr>
     <tr style="background-color: #FFFFFF;"> 
-      <td>First Name</td>
+      <td>Real Name</td>
       <td> 
-        <?php echo $firstname; ?></td>
+        <?php echo $realname; ?></td>
     </tr>
-    <tr style="background-color: #FFFFFF;"> 
-      <td>Surname</td>
-      <td> 
-        <?php echo $surname; ?></td>
-    </tr>
-    
     <tr style="background-color: #FFFFFF;"> 
       <td>birth year</td>
       <td> 

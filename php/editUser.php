@@ -16,16 +16,14 @@ include '../func/dbconnection.php';?>
   if (isset($_POST['username']))
  
  {
-      //create short variable names from the data received from the form
+    //create short variable names from the data received from the form
     $username = $_POST['username'];
     $password = $_POST['password']; 
     $confirmPassword = $_POST['confirmPassword'];
-
-  $firstname = $_POST['firstname'];
-  $surname = $_POST['surname'];
-	$birth_year = $_POST['birth_year'];
-  $country = $_POST['country'];
-	$emailAddress = $_POST['emailAddress'];
+    $realname = $_POST['realname'];
+    $birth_year = $_POST['birth_year'];
+    $country = $_POST['country'];
+    $emailAddress = $_POST['emailAddress'];
   
   // we create this variable and set it to an empty string... if it remains empty by the end
   // of our validation code, then there was no error found
@@ -170,7 +168,7 @@ include '../func/dbconnection.php';?>
 
 <body>
 <h2><strong>User Details</strong></h2>
-<form name="newUserForm" method="post" action="editUser.php?edit_id=<?php echo $_GET['edit_id']?>" onsubmit="return ValidateUserForm();">
+<form name="UserForm" method="post" action="editUser.php?edit_id=<?php echo $_GET['edit_id']?>" onsubmit="return ValidateUserForm();">
   
   <table style="width: 500px; border: 0px;" cellspacing="1" cellpadding="1">
   <tr>
@@ -199,14 +197,9 @@ include '../func/dbconnection.php';?>
       <td colspan="2"><strong>Personal Details</strong></td>
     </tr>
     <tr style="background-color: #FFFFFF;"> 
-      <td>First Name</td>
+      <td>Real Name</td>
       <td> 
-        <input name="firstname" type="text" style="width: 200px;" maxlength="50" /></td>
-    </tr>
-    <tr style="background-color: #FFFFFF;"> 
-      <td>Surname</td>
-      <td> 
-        <input name="surname" type="text" style="width: 200px;" maxlength="50" /></td>
+        <input name="realname" type="text" style="width: 200px;" maxlength="50" /></td>
     </tr>
     <tr style="background-color: #FFFFFF;"> 
       <td>Birth year</td>

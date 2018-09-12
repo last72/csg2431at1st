@@ -13,7 +13,7 @@ require '../func/dbconnection.php';
 
 <body>
 <h2><strong>New User Details</strong></h2>
-<form name="newUserForm" method="post" action="registrationresult.php"  onsubmit="return ValidateUserForm();">
+<form name="UserForm" method="post" action="registrationresult.php"  onsubmit="return ValidateUserForm();">
   <table style="width: 500px; border: 0px;" cellspacing="1" cellpadding="1">
   <tr>
       <td colspan="2"><strong>Login Details</strong></td>
@@ -40,14 +40,9 @@ require '../func/dbconnection.php';
       <td colspan="2"><strong>Personal Details</strong></td>
     </tr>
     <tr style="background-color: #FFFFFF;"> 
-      <td>First Name</td>
+      <td>Real Name</td>
       <td> 
-        <input name="firstname" type="text" style="width: 200px;" maxlength="50" /></td>
-    </tr>
-    <tr style="background-color: #FFFFFF;"> 
-      <td>Surname</td>
-      <td> 
-        <input name="surname" type="text" style="width: 200px;" maxlength="50" /></td>
+        <input name="realname" type="text" style="width: 200px;" maxlength="50" /></td>
     </tr>
     <tr style="background-color: #FFFFFF;"> 
       <td>Birth year</td>

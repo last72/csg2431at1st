@@ -47,7 +47,7 @@ session_start();
   
   //start the table in which our user list will be shown
   echo '<table><tr>';
-  echo '<th>Username</th><th>Name</th><th>Email</th><th>Birth Year</th><th>Country</th><th>Access level</th><th>Manage</th>';
+  echo '<th>Username</th><th>Real Name</th><th>Email</th><th>Birth Year</th><th>Country</th><th>Access level</th><th>Manage</th>';
   echo '</tr>';
   
   //  loop through the result and display them
