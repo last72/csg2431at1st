@@ -42,8 +42,12 @@
         {
             $user = $results->fetch_assoc();
             
-            if (password_verify($_POST['tpassword'], $user['password']))
-            //if ($_POST['tpassword'] = $user['password'])
+            
+            $passwordresult = password_verify($_POST['tpassword'], $user['password']);
+            echo $passwordresult;
+
+            //if (password_verify($_POST['tpassword'], $user['password']))
+            if ($_POST['tpassword'] = $user['password'])
             {
                 //Set session variables then redirect to menu page
                 $_SESSION['uname'] = $user['username'];

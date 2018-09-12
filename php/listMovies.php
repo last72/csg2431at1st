@@ -28,7 +28,7 @@
   $query = "SELECT * FROM movies ORDER BY movie_name";
   
   // execute the query
-  $results = $db->query($query);
+  $results = mysqli_query($connection, $query);
   
   // show how many rows the query returned
   echo '<p>'.$results->num_rows.' movies found.</p>';

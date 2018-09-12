@@ -80,40 +80,61 @@ function ValidateUserForm()
 // Validate php/newmovierigi.php form
 function ValidateMovieForm()
 {
-	if (document.newMovieForm.birth_year.value == '')
+	if (document.MovieForm.moviename.value == '')
 	{
-		alert('Birth year field cannot be blank.');
-	document.newMovieForm.birth_year.focus();
+		alert('Movie name field cannot be blank.');
+	document.MovieForm.moviename.focus();
 	return false;
 	}
 
-	if (isNaN(document.newMovieForm.birth_year.value))
+	if (document.MovieForm.release_year.value == '')
 	{
-		alert('Birth year field must be a number.');
-	document.newMovieForm.birth_year.focus();
+		alert('release_year cannot be blank.');
+	document.MovieForm.release_year.focus();
+	return false;
+	}
+
+	if (isNaN(document.MovieForm.release_year.value))
+	{
+		alert('release year field must be a number.');
+	document.MovieForm.release_year.focus();
 	return false;
 	}
 	
-	if (document.newMovieForm.username.value == '')
+	if (document.MovieForm.director.value == '')
 	{
-		alert('Username cannot be blank.');
-	document.newMovieForm.username.focus();
+		alert('director cannot be blank.');
+	document.MovieForm.director.focus();
 	return false;
 	}
 	
-	if (document.newMovieForm.emailAddress.value == '')
+	if (document.MovieForm.writers.value == '')
 	{
-		alert('Email Address field cannot be blank.');
-	document.newMovieForm.emailAddress.focus();
+		alert('writers field cannot be blank.');
+	document.MovieForm.writers.focus();
 	return false;
 	}
 	
-	if (document.newMovieForm.password.value == '')
+	if (document.MovieForm.duration.value == '')
 	{
-		alert('Password field cannot be blank.');
-	document.newMovieForm.password.focus();
+		alert('duration cannot be blank.');
+	document.MovieForm.duration.focus();
 	return false;
 	}
-	
+
+	if (isNaN(document.MovieForm.duration.value))
+	{
+		alert('duration field must be a number.');
+	document.MovieForm.duration.focus();
+	return false;
+	}
+
+	if (document.MovieForm.summary.value == '')
+	{
+		alert('summary cannot be blank.');
+	document.MovieForm.summary.focus();
+	return false;
+	}
+
 	return true;
 }

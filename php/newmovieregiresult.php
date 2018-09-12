@@ -1,7 +1,4 @@
-<?php include '../func/dbconnection.php';?>
-<?php 
-  @ $db = new mysqli('localhost', 'root', 't00r', 'movietalkat1');
-  ?>
+<?php require '../func/dbconnection.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +24,6 @@
   {
     $error_message = 'One of the required values was  blank.';
   }
-
     
   // Check the release year is number or not.
   elseif (!is_numeric($release_year))
@@ -35,8 +31,17 @@
     $error_message = 'Your release year is not numeric';
   }
 
+  // Check the release year is valid or not.
+  elseif (strlen($release_year) != 4)
+  {
+    $error_message = 'Your release year is not valid';
+  }
 
-   
+  // Check the duration is number or not.
+  elseif (!is_numeric($duration))
+  {
+    $error_message = 'Your duration is not numeric';
+  }
 
   // if the error_message variable is not empty (i.e. an error has been found)
   if ($error_message != '')
@@ -57,7 +62,7 @@
   '".$director."', '".$writers."', '".$duration."', '".$summary."')";
 
 
-  $result = $db->query($query);
+  $result = mysqli_query($connection, $query);
 
   if ($result)
 	{
