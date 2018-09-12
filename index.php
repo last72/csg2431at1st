@@ -1,7 +1,10 @@
 <?php
     //php code goes here
 	include "./func/actions.php";
-?>
+	//Start or resume a session
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -43,15 +46,29 @@
 		          <a class="dropdown-item" href="php/editMovie.php">Edit Movie</a>
 							</div>
 		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="login.php">Sign In</a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="logout.php">Sign Out</a>
-		      </li>
-		       <li class="nav-item">
-		        <a class="nav-link" href="php/registration.php">Register</a>
-		      </li>
+
+	<?php 
+	//If the "uname" session variable is not set or is empty, redirect to login page
+	if ( !isset($_SESSION['uname']) || $_SESSION['uname'] == '' )
+	{
+		echo '<li class="nav-item">
+			<a class="nav-link" href="login.php">Sign In</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="php/registration.php">Register</a>
+		</li>';
+
+	}
+	else
+	{
+		echo '<li class="nav-item">
+			<a class="nav-link" href="logout.php">Sign Out</a>
+		</li>';
+	}
+	
+	?>
+
+
 		    </ul>
 		    <form class="form-inline my-2 my-lg-0" method="get" action="php/searchMovies.php">
 		      <input class="form-control mr-sm-2" type="search" placeholder="Search movies" aria-label="Search" name="serach_item" required />
