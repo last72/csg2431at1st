@@ -1,7 +1,4 @@
-<?php include '../func/dbconnection.php';?>
-<?php   // connect to database
-  @ $db = new mysqli('localhost', 'root', 't00r', 'movietalkat1');
-  ?>
+<?php require '../func/dbconnection.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +9,7 @@
 </head>
 
 <body>
-<h2><strong>List Movies</strong></h2>
+<h2><strong>Search Movies Results</strong></h2>
 
 
 
@@ -30,7 +27,7 @@
   $query = "SELECT * FROM movies WHERE `movie_name` LIKE '%".$search_item."%' ORDER BY movie_name";
   
   // execute the query
-  $results = $db->query($query);
+  $results = mysqli_query($connection, $query);
   
   // show how many rows the query returned
   echo '<p>'.$results->num_rows.' movies found.</p>';
