@@ -45,6 +45,50 @@
 	  echo '</tr>';
   }
   echo '</table>';
+
+// Ratings
+echo '<h2>Rating</h2></br>';
+
+$rating_query = "SELECT AVG(rating) FROM ratings ".'WHERE movie_id ='.$_GET['movie_id'];
+  
+  // execute the query
+$rating_results = mysqli_query($connection, $rating_query);
+$row = $rating_results->fetch_assoc();
+$avg_birth_year = round($row['AVG(rating)']);
+
+
+echo 'Average Rating: '.$avg_birth_year.'</br>';
+echo '<a href="newrating.php">leave rating</a></br>';
+
+
+echo '<h2>Discussion</h2></br>';
+
+
+$discussion_query = "SELECT * FROM discussion ".'WHERE movie_id ='.$_GET['movie_id'].' ORDER BY post_date';
+  
+  // execute the query
+  $discussion_results = mysqli_query($connection, $discussion_query);
+
+  
+  //start the table in which our user list will be shown
+  echo '<table><tr>';
+  echo '<th>post date</th><th>user name</th><th>content</th>';
+  echo '</tr>';
+  
+  //  loop through the result and display them
+  while ($row = $discussion_results->fetch_assoc())
+  {
+      echo '<td>'.$row['post_date'].'</td>';
+      echo '<td>'.$row['username'].'</td>';
+      echo '<td>'.$row['content'].'</td>';
+
+	  echo '</tr>';
+  }
+  echo '</table>';
+
+
+
+
 }
 
   echo '<a href="../index.php">Back to Home</a>';
