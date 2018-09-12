@@ -62,7 +62,7 @@ include '../func/dbconnection.php';?>
 	'".$director."', writers = '".$writers."', duration = '".$duration."'
 	WHERE movie_id = ".$_GET['edit_id'] ;
 	
-	$result = $db->query($query);
+  $result = mysqli_query($connection, $query);
 	
 	
 	
@@ -88,10 +88,8 @@ include '../func/dbconnection.php';?>
       
       echo "editing in progress ";
       $edit_query = 'SELECT * FROM movies WHERE movie_id = \''.$_GET['edit_id'].'\'';
-      $result = $db->query($edit_query);
-      
+      $result = mysqli_query($connection, $edit_query);
       $row = $result->fetch_assoc();
-      echo $db->error;
 
   }
   else

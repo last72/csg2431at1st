@@ -1,7 +1,14 @@
-<?php include '../func/dbconnection.php';?>
 <?php   // connect to database
-  @ $db = new mysqli('localhost', 'root', 't00r', 'movietalkat1');
+  require '../func/dbconnection.php';
+
+
+//Start or resume a session
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
   ?>
+
+  
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,11 +25,12 @@
 
 <?php
   //  delete user if del_id GET data exists
-  if (isset($_GET['del_id']))
+  if (isset($_GET['del_id']) && ($_SESSION['level'] == 'admin'))
   {
 	  
 	  $del_query = 'DELETE FROM movies WHERE movie_id = '.$_GET['del_id'];
-	  $del_results = $db->query($del_query);
+    $del_results = mysqli_query($connection,$del_query);
+
   }
   
   $query = "SELECT * FROM movies ORDER BY movie_name";
@@ -35,7 +43,7 @@
   
   //start the table in which our user list will be shown
   echo '<table><tr>';
-  echo '<th>Movie name</th><th>Release year</th><th>Director</th><th>Writers</th><th>Duration</th><th>Summary</th><th>Manage</th>';
+  echo '<th>Movie name</th><th>Release year</th><th>Manage</th>';
   echo '</tr>';
   
   //  loop through the result and display them
@@ -43,15 +51,26 @@
   {
       echo '<td>'.$row['movie_name'].'</td>';
       echo '<td>'.$row['release_year'].'</td>';
-      echo '<td>'.$row['director'].'</td>';
-      echo '<td>'.$row['writers'].'</td>';
-      echo '<td>'.$row['duration'].'</td>';
-      echo '<td>'.$row['summary'].'</td>';
 
       echo '<td><a href="movieDetails.php?movie_id='.$row['movie_id'].'">Details</a> ';
-      echo '<a href="editMovie.php?edit_id='.$row['movie_id'].'">Edit</a> ';
-      echo '<a href="listMovies.php?del_id='.$row['movie_id'].'"
-      onclick="return confirm(\'Are you sure you want to delete this user?\');">Delete</a></td></tr>';
+
+
+      if ( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'editor' )
+      {
+        echo '<a href="editMovie.php?edit_id='.$row['movie_id'].'">Edit</a> ';
+      }
+
+      if ( $_SESSION['level'] == 'admin')
+      {
+        echo '<a href="listMovies.php?del_id='.$row['movie_id'].'"
+        onclick="return confirm(\'Are you sure you want to delete this user?\');">Delete</a>';
+      }
+
+      echo '</td></tr>';
+      
+
+
+      
   }
   echo '</table>';
 
