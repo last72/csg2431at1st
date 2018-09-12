@@ -1,6 +1,7 @@
-<?php include '../func/dbconnection.php';?>
+<?php //include '../func/dbconnection.php';?>
 <?php   // connect to database
-  @ $db = new mysqli('localhost', 'root', 't00r', 'movietalkat1');
+  // @ $db = new mysqli('localhost', 'root', 't00r', 'movietalkat1');
+  require '../func/dbconnection.php';
   ?>
 <!DOCTYPE html>
 <html>
@@ -23,7 +24,7 @@
   $query = "SELECT * FROM movies ".'WHERE movie_id ='.$_GET['movie_id'];
   
   // execute the query
-  $results = $db->query($query);
+  $results = mysqli_query($connection, $query);
 
   
   //start the table in which our user list will be shown
