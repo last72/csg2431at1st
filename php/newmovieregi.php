@@ -12,7 +12,6 @@ require '../func/dbconnection.php';
     exit;
   }
 
-
 ?>
 
 <!DOCTYPE html>

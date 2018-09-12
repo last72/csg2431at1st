@@ -1,7 +1,5 @@
-<?php //include '../func/dbconnection.php';?>
 <?php 
-  //@ $db = new mysqli('localhost', 'root', 't00r', 'movietalkat1');
-require '../func/dbconnection.php';
+  require '../func/dbconnection.php';
   ?>
 
 <!DOCTYPE html>
