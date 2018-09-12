@@ -116,9 +116,9 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`username`, `real_name`, `email`, `birth_year`, `country`, `password`, `access_level`) VALUES
 ('asmith', 'Adam Smith', 'smitho@gmail.com', 1984, '', 'abc123', 'admin'),
 ('jbloggs', 'Joe Bloggs', 'Howard', 1990, 'Australia', 'swordfish99', 'member'),
-('admin', 'admin', '11@a.com', 1998, 'United States', '$2y$10$l.QqVO3NUVweKk58XvHviu.Mv7f.ApjTJx7wh4YO6tS', 'admin'),
-('editor', 'editor', '11@a.com', 1998, 'United States', '$2y$10$YbSch4indqWY8FSA81ykU.MV3Qgkb6SXL/S45aPGrg4', 'editor'),
-('member', 'member', '11@a.com', 1998, 'United States', '$2y$10$MOqlMDsvJqzfwkskKq5EPO0rV6Je9hEfwnA90VDcXBe', 'member');
+('admin', 'admin', '11@a.com', 1998, 'United States', 'admin', 'admin'),
+('editor', 'editor', '11@a.com', 1998, 'United States', 'editor', 'editor'),
+('member', 'member', '11@a.com', 1998, 'United States', 'member', 'member');
 
 
 --
