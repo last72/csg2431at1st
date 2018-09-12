@@ -63,6 +63,10 @@ as temporary solution.
  * the username need to be covered in '' because it's string. a number do not require that.
 * ``` @ $db = new mysqli('localhost', 'root', 't00r', 'movietalkat1');``` is replaced with ```require '../func/dbconnection.php';``` and use ``` $result = mysqli_query($connection,$query);``` instead of ```$result = $db->query($query);```
 
+# Testing account information
+* Username: admin, Password: admin
+* Username: editor, Password: editor
+* Username: member, Password: member
  
 
 # Sitemap diagram
