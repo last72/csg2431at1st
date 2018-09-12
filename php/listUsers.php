@@ -10,10 +10,8 @@ session_start();
 
 
 ?>
-<?php include '../func/dbconnection.php';?>
-<?php   // connect to database
-  @ $db = new mysqli('localhost', 'root', 't00r', 'movietalkat1');
-  ?>
+<!-- // connect to database -->
+<?php require '../func/dbconnection.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,13 +32,13 @@ session_start();
   {
 	  echo 'Delete in progress';
 	  $del_query = 'DELETE FROM users WHERE username = \''.$_GET['del_id'].'\'';
-	  $del_results = $db->query($del_query);
+	  $del_results = mysqli_query($connection, $del_query);
   }
   
   $query = "SELECT * FROM users ORDER BY username";
   
   // execute the query
-  $results = $db->query($query);
+  $results = mysqli_query($connection, $query);
   
   // show how many rows the query returned
   echo '<p>'.$results->num_rows.' users found.</p>';
