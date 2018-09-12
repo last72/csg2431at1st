@@ -114,10 +114,10 @@
     // (and them the script continues to the HTML section that displays the results)
     echo '<p><strong>Form submitted sucessfully!</strong></p>';
 
-  $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+  // $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
   $query = "INSERT INTO users VALUE ('".$username."', '".$realname."',
-  '".$emailAddress."', '".$birth_year."', '".$country."', '".$hashed_password."', 'member')";
+  '".$emailAddress."', '".$birth_year."', '".$country."', '".$password."', 'member')";
 
   //$result = $db->query($query);
   $result = mysqli_query($connection,$query);

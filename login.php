@@ -43,8 +43,8 @@
             $user = $results->fetch_assoc();
             
             
-            $passwordresult = password_verify($_POST['tpassword'], $user['password']);
-            echo $passwordresult;
+            // $passwordresult = password_verify($_POST['tpassword'], $user['password']);
+            // echo $passwordresult;
 
             //if (password_verify($_POST['tpassword'], $user['password']))
             if ($_POST['tpassword'] = $user['password'])
