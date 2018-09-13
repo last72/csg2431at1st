@@ -67,7 +67,6 @@ if ($duplicate_results->num_rows > 0)
 
     $query = "INSERT INTO ratings SET movie_id = '".$_POST['movie_id']."', username = '".$_SESSION['uname']."', rating = '".$_POST['rating']."'";
 
-    echo $query;
 
   $result = mysqli_query($connection, $query);
 
