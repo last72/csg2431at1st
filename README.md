@@ -16,26 +16,29 @@ Now that you’ve covered the creation of databases in phpMyAdmin, try to create
 Now that you’ve covered forms and validation, look through the assignment brief and identify all of the major forms – e.g. registration forms, log in forms, forms to create things… Create the forms in HTML files and write JavaScript code to validate them. Don’t worry about the forms not being connected to anything at this stage. Spend some time working on the overall structure of your site/system at this stage – all of the database-driven parts can have placeholders for now. Just flesh out the main pages and get the links between them working.
 * ~~Woongyeol - Sign up page, movie registration page~~
 * Tash - comment leaving, sign in page, Search page
-### Module 4: Form, Web & Database Interaction
+### ~~Module 4: Form, Web & Database Interaction~~
 Now that you’ve covered database interaction, you can really start to work on the functional parts of the assignment. Having the forms, database and general structure of the site will really pay off now, since most of what you need to do is add the code to interact with the database (select, insert, update, delete).
 * ~~Woongyeol - Sign up page, movie registration page (Insert, Update, Delete data works)~~
-* Tash - comment leaving, sign in page, Search page
-### Module 5: Control Structures, Calculations & Date/Time Values
+* Tash - comment leaving, ~~sign in page, ~~Search page
+
+* ~~Woongyeol - comment leaving, Search page~~
+
+### ~~Module 5: Control Structures, Calculations & Date/Time Values~~
 This week covers more database interaction and some general coding concepts. Continue working on the functional parts of the assignment. Remember to test everything thoroughly, and spend time making sure you understand what each line of code does, rather than blindly copy-pasting lines of code from various places.
-### Module 6: Sessions, State Management & User Authentication
+### ~~Module 6: Sessions, State Management & User Authentication~~
 Now that you’ve covered sessions, you can implement them in your assignment to control access to authorised users. Remember to be consistent and thorough in how you implement sessions.
 * ~~Create a login page that requests an email address (as the username) and password, checks them against the database, sets appropriate session variables, and redirects to a main menu / home page.~~
 * ~~Check session variables to ensure that the main menu / home page and other pages (e.g. ones to add, edit and delete users) can only be accessed by people who have logged in.~~
 * ~~Add a logout page which destroys the session data and redirects the user to the login page.  Add a link to the logout page to all pages requiring the user to be logged in (see goal 2).~~
-* ~~Add an access level field to your database's userdetails table, and give any existing users an access level of 'admin', 'editor' or 'guest'.~~  Restrict access to the register and delete page to admin only, the edit page to editor or admin only, and all other pages available to all access levels.
-### Module 7: Advanced State Management & User/Event Tracking
+* ~~Add an access level field to your database's userdetails table, and give any existing users an access level of 'admin', 'editor' or 'guest'.~~  ~~Restrict access to the register and delete page to admin only, the edit page to editor or admin only, and all other pages available to all access levels.~~
+### Module 7: ~~Advanced State Management & User/Event Tracking~~
 While some of the content in this module is likely to be useful in the second assignment, it won’t introduce anything necessary in assignment 1. Spend the week finalising your assignment code and consider adding extra features or functionality if you can
 
 
 
 ## Authors
 
-* **Woongyeol Choi** - *Web Developer* - [last72](https://github.com/last72/)
+* **Woongyeol Choi** - *Web Developer* - [last72](https://github.com/last72/)- wchoi0@our.ecu.ecu.au
 * **Tashi Duks** - *Web Developer* - [TashiDuks](https://github.com/TashiDuks)
 
 ## Acknowledgments
@@ -44,11 +47,11 @@ While some of the content in this module is likely to be useful in the second as
 
 
 # Problems
-* in php/newmovieregiresult.php, I couldn't put result to database as we changed the connection code to func/dbconnedtion.php I just addedd 
+* ~~in php/newmovieregiresult.php, I couldn't put result to database as we changed the connection code to func/dbconnedtion.php I just addedd ~~
 ```
 @ $db = new mysqli('localhost', 'root', 't00r', 'movietalkat1');
 ```
-as temporary solution. 
+~~as temporary solution. ~~
 
 # Regarding to Assessement, Requirements
 * Hasing and securing password is extra mark in assessment. not required though.
