@@ -38,6 +38,17 @@ exit;
     $error_message = 'Your rating is not numeric';
   }
 
+// now we'll check if the username already exists in the database
+$duplicate_query = "SELECT * FROM ratings WHERE username = '".$_SESSION['uname']."'"." AND movie_id = '".$_POST['movie_id']."'";
+$duplicate_results = mysqli_query($connection,$duplicate_query);
+
+
+
+if ($duplicate_results->num_rows > 0)
+{
+  $error_message = 'Your Already left rating.';
+}
+
 
   // if the error_message variable is not empty (i.e. an error has been found)
   if ($error_message != '')
