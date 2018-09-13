@@ -4,7 +4,6 @@ session_start();
 include '../func/dbconnection.php';?>
 <?php
   // connect to database
-  @ $db = new mysqli('localhost', 'root', 't00r', 'movietalkat1');
   
   if ( $_SESSION['level'] != 'admin' )
 {
@@ -13,11 +12,13 @@ include '../func/dbconnection.php';?>
 }
 
   // process submitted form
-  if (isset($_POST['username']))
+  if (isset($_POST['password']))
  
  {
+
+
+  
     //create short variable names from the data received from the form
-    $username = $_POST['username'];
     $password = $_POST['password']; 
     $confirmPassword = $_POST['confirmPassword'];
     $realname = $_POST['realname'];
@@ -30,7 +31,7 @@ include '../func/dbconnection.php';?>
   $error_message = '';
 
   // first we'll check if any of our required fields are empty all at once
-  if (empty($username) || empty($birth_year) || empty($country) ||
+  if ( empty($birth_year) || empty($country) ||
   empty($password) || empty($confirmPassword))
   {
     $error_message = 'One of the required values was  blank.';
@@ -57,15 +58,9 @@ include '../func/dbconnection.php';?>
   {
     $error_message = 'Your home birth year is not numeric';
   }
-   
-  // now we'll check if the username is too long
-  elseif (strlen($username) > 100)
-  {
-    $error_message = 'Your username is too long.';
-  }
-
+  
   // now we'll check if the name is too long
-  elseif (strlen($firstname) + strlen($surname) > 50)
+  elseif (strlen($realname) > 50)
   {
     $error_message = 'Your name is too long.';
   }
@@ -94,12 +89,6 @@ include '../func/dbconnection.php';?>
     $error_message = 'Your password is too long.';
   }
 
-  // check the username is same
-  if ($username != $_GET['edit_id'])
-  {
-    $error_message = 'Your cannot change username';
-  }
-
 
   // if the error_message variable is not empty (i.e. an error has been found)
   if ($error_message != '')
@@ -117,12 +106,16 @@ include '../func/dbconnection.php';?>
     echo '<p><strong>Form submitted sucessfully!</strong></p>';
 	
 	
-	$query = "UPDATE users VALUE ('".$username."', '".$firstname."' + '".$surname."',
-  '".$emailAddress."', '".$birth_year."', '".$country."', '".$hashed_password."', 'member')
-	WHERE username = ".$_GET['edit_id'];
+	$query = "UPDATE users
+  
+  SET real_name = '".$realname."', 
+  email = '".$emailAddress."', 
+  birth_year = '".$birth_year."', 
+  country =  '".$country."' 
+
+  WHERE username = '".$_GET['edit_id']."'";
 	
-	$result = $db->query($query);
-	
+  $result = mysqli_query($connection, $query);	
 	
 	
 	if ($result)
@@ -131,8 +124,8 @@ include '../func/dbconnection.php';?>
 	}
 	else
 	{
-		echo '<p>Error updating details. Error message:</p>';
-		echo '<p>'.$db->error.'</p>';
+    echo '<p>Error updating details :</p>';
+    echo mysqli_error($connection);
 	}
 	
   }
@@ -147,7 +140,8 @@ include '../func/dbconnection.php';?>
       
       echo "editing in progress ";
       $edit_query = 'SELECT * FROM users WHERE username = \''.$_GET['edit_id'].'\'';
-      $result = $db->query($edit_query);
+      $result = mysqli_query($connection, $edit_query);
+      
       
       $row = $result->fetch_assoc();
   }
@@ -199,7 +193,8 @@ include '../func/dbconnection.php';?>
     <tr style="background-color: #FFFFFF;"> 
       <td>Real Name</td>
       <td> 
-        <input name="realname" type="text" style="width: 200px;" maxlength="50" /></td>
+        <input name="realname" type="text" style="width: 200px;" maxlength="50" value="<?php echo
+		$row ['real_name']; ?>" />*</td>
     </tr>
     <tr style="background-color: #FFFFFF;"> 
       <td>Birth year</td>
@@ -228,8 +223,10 @@ include '../func/dbconnection.php';?>
         <div align="right">* indicates required field</div></td>
     </tr>
   </table>
-  <a href="javascript: history.back();">Go Back</a>
+  <a href="javascript: history.back();">Go Back </a>
+  <a href="../">Go Home </a>
 </form>
 <?php   echo '<a href="../logout.php">Sign Out</a>'; ?>
+
 </body>
 </html>
