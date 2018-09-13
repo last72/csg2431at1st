@@ -15,8 +15,6 @@ if (!DBHOST)
     exit;
     }
 
-
-    echo $_SESSION['movie_id'];
     ?>
 
 <!DOCTYPE html>
@@ -29,11 +27,7 @@ if (!DBHOST)
 <body>
 <h2><strong>movie rating</strong></h2>
 <form name="ratingForm" method="post" action="newratingresult.php" onsubmit="return ValidateMovieForm();">
- <input name="movie_id" type="hidden" value="
- <?php
- echo $_SESSION['movie_id'];
-  ?>
- " />
+ <input name="movie_id" type="hidden" value="<?php echo $_SESSION['movie_id'];  ?>" />
   <table style="width: 500px; border: 0px;" cellspacing="1" cellpadding="1">
   <tr>
       <td colspan="2"><strong>movie rating</strong></td>

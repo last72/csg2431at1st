@@ -54,7 +54,7 @@ exit;
     // (and them the script continues to the HTML section that displays the results)
     echo '<p><strong>Form submitted sucessfully!</strong></p>';
 
-    $query = "INSERT INTO ratings SET movie_id = '".$_POST['movie_id']."' username = '".$_SESSION['uname']."' rating = '".$_POST['rating']."'";
+    $query = "INSERT INTO ratings SET movie_id = '".$_POST['movie_id']."', username = '".$_SESSION['uname']."', rating = '".$_POST['rating']."'";
 
     echo $query;
 
@@ -63,7 +63,7 @@ exit;
   if ($result)
 	{
     echo '<p>Movie details inserted into database!</p>';
-    header('Location: movieDetails?movie_id='.$_POST['movie_id'].'.php');
+    header('Location: movieDetails.php?movie_id='.$_POST['movie_id']);
 
 
 	}

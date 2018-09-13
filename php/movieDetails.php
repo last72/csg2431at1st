@@ -2,6 +2,10 @@
 <?php   // connect to database
   // @ $db = new mysqli('localhost', 'root', 't00r', 'movietalkat1');
   require '../func/dbconnection.php';
+
+  if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+  }
   ?>
 <!DOCTYPE html>
 <html>
@@ -27,9 +31,6 @@
   $results = mysqli_query($connection, $query);
 
   $_SESSION['movie_id'] = $_GET['movie_id'];
-
-  echo 'Movie ID from session: ';
-  echo $_SESSION['movie_id'];
 
 
   
@@ -64,8 +65,12 @@ $avg_birth_year = round($row['AVG(rating)']);
 
 
 echo 'Average Rating: '.$avg_birth_year.'</br>';
-echo '<a href="newrating.php">leave rating</a></br>';
-require 'newrating.php';
+
+if ( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'editor' or $_SESSION['level'] == 'member' )
+    {
+      require 'newrating.php';
+    }
+
 
 
 echo '<h2>Discussion</h2></br>';
