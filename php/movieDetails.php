@@ -91,7 +91,16 @@ $discussion_query = "SELECT * FROM discussion ".'WHERE movie_id ='.$_GET['movie_
   while ($row = $discussion_results->fetch_assoc())
   {
       echo '<td>'.$row['post_date'].'</td>';
-      echo '<td>'.$row['username'].'</td>';
+
+      if (!$_SESSION['level'] == '' )
+      {
+        echo '<td><a href="userDetails.php?username='.$row['username'].'">'.$row['username'].'</a></td>';
+      }
+      else
+      {
+        echo '<td>'.$row['username'].'</td>';
+      }
+
       echo '<td>'.$row['content'].'</td>';
 
 	  echo '</tr>';
