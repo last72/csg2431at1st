@@ -20,12 +20,12 @@ if (!DBHOST)
 <!DOCTYPE html>
 <html>
 <head>
-  <title>movie rating</title>
+  <title>Leave rating</title>
 	<link rel="stylesheet" type="text/css" href="css/validation.css">
 </head>
 
 <body>
-<h2><strong>movie rating</strong></h2>
+<h3><strong>movie rating</strong></h3>
 <form name="ratingForm" method="post" action="newratingresult.php" onsubmit="return ValidateMovieForm();">
  <input name="movie_id" type="hidden" value="<?php echo $_SESSION['movie_id'];  ?>" />
   <table style="width: 500px; border: 0px;" cellspacing="1" cellpadding="1">
@@ -37,7 +37,7 @@ if (!DBHOST)
       <td>         
         <select name="rating" style="width: 200px;" required>
           <?php
-            for ($i=10; $i>=0; $i--)
+            for ($i=10; $i>=1; $i--)
             {
               echo '<option value="'."$i".'"';
               echo '>'."$i".'</option>';
