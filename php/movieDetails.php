@@ -105,9 +105,12 @@ $discussion_query = "SELECT * FROM discussion ".'WHERE movie_id ='.$_GET['movie_
 
 	  echo '</tr>';
   }
-  echo '</table>';
+  echo '</table></br>';
 
-
+  if ( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'editor' or $_SESSION['level'] == 'member' )
+  {
+    require 'newdiscussion.php';
+  }
 
 
 }
