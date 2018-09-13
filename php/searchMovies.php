@@ -1,5 +1,16 @@
-<?php require '../func/dbconnection.php';?>
-<!DOCTYPE html>
+<?php   // connect to database
+  require '../func/dbconnection.php';
+
+
+//Start or resume a session
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+if (!isset($_SESSION['level']))
+{
+  $_SESSION['level'] = '';
+}
+  ?><!DOCTYPE html>
 <html>
 <head>
   <title>List Movies</title>
@@ -15,11 +26,11 @@
 
 <?php
   //  delete user if del_id GET data exists
-  if (isset($_GET['del_id']))
+  if (isset($_GET['del_id']) && ($_SESSION['level'] == 'admin'))
   {
 	  
 	  $del_query = 'DELETE FROM movies WHERE movie_id = '.$_GET['del_id'];
-	  $del_results = $db->query($del_query);
+    $del_results = mysqli_query($connection,$del_query);
   }
   
   $search_item = $_GET['serach_item'];
@@ -34,7 +45,7 @@
   
   //start the table in which our user list will be shown
   echo '<table><tr>';
-  echo '<th>Movie name</th><th>Release year</th><th>Director</th><th>Writers</th><th>Duration</th><th>Summary</th>';
+  echo '<th>Movie name</th><th>Release year</th><th>Manage</th>';
   echo '</tr>';
 
 
@@ -42,18 +53,30 @@
   //  loop through the result and display them
   while ($row = $results->fetch_assoc())
   {
-      echo '<tr>';
-      echo '<td>'.$row['movie_name'].'</td>';
-      echo '<td>'.$row['release_year'].'</td>';
-      echo '<td>'.$row['director'].'</td>';
-      echo '<td>'.$row['writers'].'</td>';
-      echo '<td>'.$row['duration'].'</td>';
-      echo '<td>'.$row['summary'].'</td>';
-      echo '</tr>';
+    echo '<td>'.$row['movie_name'].'</td>';
+    echo '<td>'.$row['release_year'].'</td>';
+
+    echo '<td><a href="movieDetails.php?movie_id='.$row['movie_id'].'">Details</a> ';
+
+
+    if ( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'editor' )
+    {
+      echo '<a href="editMovie.php?edit_id='.$row['movie_id'].'">Edit</a> ';
+    }
+
+    if ( $_SESSION['level'] == 'admin')
+    {
+      echo '<a href="listMovies.php?del_id='.$row['movie_id'].'"
+      onclick="return confirm(\'Are you sure you want to delete this user?\');">Delete</a>';
+    }
+
+    echo '</td></tr>';
 
   }
 
   echo '</table>';
+  echo '<a href="../index.php">Back to Home</a>';
+
   ?>
   
   </body>
