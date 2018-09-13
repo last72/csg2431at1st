@@ -1,4 +1,10 @@
+
 <?php require '../func/dbconnection.php';
+//Start or resume a session
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+
 if (!( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'editor' or $_SESSION['level'] == 'member' ))
 {
 header('Location: ../index.php');
@@ -48,64 +54,28 @@ exit;
     // (and them the script continues to the HTML section that displays the results)
     echo '<p><strong>Form submitted sucessfully!</strong></p>';
 
-    $query = "INSERT INTO movies VALUE (NULL, '".$moviename."', '".$release_year."',
-  '".$director."', '".$writers."', '".$duration."', '".$summary."')";
+    $query = "INSERT INTO ratings SET movie_id = '".$_POST['movie_id']."' username = '".$_SESSION['uname']."' rating = '".$_POST['rating']."'";
 
+    echo $query;
 
   $result = mysqli_query($connection, $query);
 
   if ($result)
 	{
-		echo '<p>Movie details inserted into database!</p>';
+    echo '<p>Movie details inserted into database!</p>';
+    header('Location: movieDetails?movie_id='.$_POST['movie_id'].'.php');
+
+
 	}
 	else
 	{
 		echo '<p>Error inserting details. Error message:</p>';
-		echo '<p>'.$db->error.'</p>';
+    echo mysqli_error($connection);
+
   }
   }
 ?>
 
 
-<h2><strong>New Movie Details</strong></h2>
-  <table style="width: 500px; border: 0px;" cellspacing="1" cellpadding="1">
-    <tr>
-      <td colspan="2"><strong>Movie Details</strong></td>
-    </tr>
-    <tr style="background-color: #FFFFFF;"> 
-      <td>moviename</td>
-      <td> 
-        <?php echo $moviename; ?></td>
-    </tr>
-    <tr style="background-color: #FFFFFF;"> 
-      <td>release_year</td>
-      <td> 
-        <?php echo $release_year; ?></td>
-    </tr>
-    
-    <tr style="background-color: #FFFFFF;"> 
-      <td>director</td>
-      <td> 
-        <?php echo $director; ?></td>
-    </tr>
-    
-    <tr style="background-color: #FFFFFF;"> 
-      <td>writers</td>
-      <td> 
-        <?php echo $writers; ?></td>
-    </tr>
-
-    <tr style="background-color: #FFFFFF;"> 
-      <td>duration</td>
-      <td> 
-        <?php echo $duration; ?></td>
-    </tr>
-    <tr style="background-color: #FFFFFF;"> 
-      <td>summary</td>
-      <td> 
-        <?php echo $summary; ?></td>
-    </tr>
-  </table>
-  <a href="../">Go Home</a>
 </body>
 </html>

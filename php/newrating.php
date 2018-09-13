@@ -1,10 +1,13 @@
 <?php
 //Start or resume a session
-session_start();
-
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
 // db connection
-require '../func/dbconnection.php';
-
+if (!DBHOST)
+{
+  require '../func/dbconnection.php';
+}
 
   if (!( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'editor' or $_SESSION['level'] == 'member' ))
     {
@@ -12,7 +15,9 @@ require '../func/dbconnection.php';
     exit;
     }
 
-?>
+
+    echo $_SESSION['movie_id'];
+    ?>
 
 <!DOCTYPE html>
 <html>
@@ -24,6 +29,11 @@ require '../func/dbconnection.php';
 <body>
 <h2><strong>movie rating</strong></h2>
 <form name="ratingForm" method="post" action="newratingresult.php" onsubmit="return ValidateMovieForm();">
+ <input name="movie_id" type="hidden" value="
+ <?php
+ echo $_SESSION['movie_id'];
+  ?>
+ " />
   <table style="width: 500px; border: 0px;" cellspacing="1" cellpadding="1">
   <tr>
       <td colspan="2"><strong>movie rating</strong></td>

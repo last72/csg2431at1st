@@ -26,6 +26,12 @@
   // execute the query
   $results = mysqli_query($connection, $query);
 
+  $_SESSION['movie_id'] = $_GET['movie_id'];
+
+  echo 'Movie ID from session: ';
+  echo $_SESSION['movie_id'];
+
+
   
   //start the table in which our user list will be shown
   echo '<table><tr>';
@@ -59,6 +65,7 @@ $avg_birth_year = round($row['AVG(rating)']);
 
 echo 'Average Rating: '.$avg_birth_year.'</br>';
 echo '<a href="newrating.php">leave rating</a></br>';
+require 'newrating.php';
 
 
 echo '<h2>Discussion</h2></br>';
