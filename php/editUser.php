@@ -1,11 +1,12 @@
-<?php 
+<?php
 //Start or resume a session
 session_start();
-include '../func/dbconnection.php';?>
-<?php
-  // connect to database
-  
-  if ( $_SESSION['level'] != 'admin' )
+
+// connect to database
+include '../func/dbconnection.php';
+
+  // Only admin or user can edit.
+  if ( !($_SESSION['level'] == 'admin' || $_SESSION['uname'] == $_GET['edit_id']))
 {
   header('Location: ../index.php');
   exit;

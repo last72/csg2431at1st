@@ -82,7 +82,7 @@ Example Sitemap
 ![Sitemap](/img/sitemapexample.png?raw=true "exampleSitemap")
 
 # Final Feedback from Lecturer
-* Good work, looks like the functionalityis mostly implemented.
-* I didn't see any link to the edit profile pagein the member site, but instead there is an edit user page in the admin section...  double check the requirements in the brief.
-* If a member has already rated a movie, they should be able to update/change their rating if they try to rate it again.
-* The navigation around the site could be better - a lot of pages only have a back link, so you have to slowly retrace your steps back to the home page before doing something else.
+- [X] Good work, looks like the functionalityis mostly implemented.
+- [X] I didn't see any link to the edit profile pagein the member site, but instead there is an edit user page in the admin section...  double check the requirements in the brief.
+- [ ] If a member has already rated a movie, they should be able to update/change their rating if they try to rate it again.
+- [ ] The navigation around the site could be better - a lot of pages only have a back link, so you have to slowly retrace your steps back to the home page before doing something else.
