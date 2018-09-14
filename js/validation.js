@@ -129,12 +129,6 @@ function ValidateMovieForm()
 	return false;
 	}
 
-	if (document.MovieForm.summary.value == '')
-	{
-		alert('summary cannot be blank.');
-	document.MovieForm.summary.focus();
-	return false;
-	}
 
 	return true;
 }

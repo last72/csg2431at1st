@@ -79,7 +79,7 @@ require '../func/dbconnection.php';
     </tr>
     <td>Summary</td>
       <td> 
-        <input name="summary" type="text" style="width: 200px;" maxlength="100" required/>*</td>
+        <input name="summary" type="text" style="width: 200px;" maxlength="100"/></td>
     </tr>
     <tr style="background-color: #FFFFFF;"> 
       <td> 
