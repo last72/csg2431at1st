@@ -32,7 +32,7 @@ if (session_status() == PHP_SESSION_NONE) {
 		      <li class="nav-item active">
 		        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
 		      </li>
-					<li class="nav-item dropdown">
+					<!-- <li class="nav-item dropdown">
 		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		          [dev purpose]
 		        </a>
@@ -45,7 +45,7 @@ if (session_status() == PHP_SESSION_NONE) {
 							<a class="dropdown-item" href="php/listMovies.php">List Movie</a>
 		          <a class="dropdown-item" href="php/editMovie.php">Edit Movie</a>
 							</div>
-		      </li>
+		      </li> -->
 
 	<?php 
 	//If the "uname" session variable is not set or is empty, redirect to login page
