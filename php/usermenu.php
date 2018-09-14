@@ -20,7 +20,6 @@ echo '<p>The '.$_SESSION['level'].' menu is below.</p>';
 if ( $_SESSION['level'] == 'admin' )
 {
 	echo '* <a href="php/listUsers.php">List User</a><br />';
-	echo '* <a href="php/editUser.php">Edit User</a><br />';
 
 	echo '* <a href="php/newmovieregi.php">New Movie</a><br />';
 	echo '* <a href="php/listMovies.php">List Movie</a><br />';
@@ -40,6 +39,8 @@ if ( $_SESSION['level'] == 'editor' )
 if ( $_SESSION['level'] == 'member' )
 {
 	echo '* <a href="php/listMovies.php">List Movie</a><br />';
+	echo '* <a href="php/editUser.php?edit_id='.$_SESSION['uname'].'">Edit Profile</a><br />';
+	echo '* <a href="php/userDetails.php?username='.$_SESSION['uname'].'">View Profile</a><br />';
 }	
 
 }
