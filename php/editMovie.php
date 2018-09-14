@@ -1,12 +1,11 @@
 <?php 
-//Start or resume a session
-session_start();
-include '../func/dbconnection.php';?>
-<?php
+  //Start or resume a session
+  session_start();
   // connect to database
-  @ $db = new mysqli('localhost', 'root', 't00r', 'movietalkat1');
 
-  if (!( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'editor' ))
+require '../func/dbconnection.php';
+
+if (!( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'editor' ))
 {
   header('Location: ../index.php');
   exit;
@@ -73,7 +72,7 @@ include '../func/dbconnection.php';?>
 	else
 	{
 		echo '<p>Error updating details. Error message:</p>';
-		echo '<p>'.$db->error.'</p>';
+		echo '<p>'.mysqli_error($connection).'</p>';
 	}
 	
   }

@@ -48,7 +48,6 @@
         <select name="birth_year" style="width: 200px;">
           <?php
           $avg_query = "SELECT AVG(birth_year) FROM users";
-          //$result = $db->query($avg_query);
           $result = mysqli_query($connection,$avg_query);
           $row = $result->fetch_assoc();
           $avg_birth_year = round($row['AVG(birth_year)']);

@@ -1,6 +1,4 @@
-<?php //include '../func/dbconnection.php';?>
 <?php 
-  //@ $db = new mysqli('localhost', 'root', 't00r', 'movietalkat1');
   require '../func/dbconnection.php';
   ?>
 <!DOCTYPE html>
@@ -90,7 +88,6 @@
 
   // now we'll check if the username already exists in the database
   $username_query = "SELECT username FROM users WHERE username = '".$username."'";
-  //$username_results = $db->query($username_query);
   $username_results = mysqli_query($connection,$username_query);
 
   if ($username_results->num_rows > 0)
@@ -119,7 +116,6 @@
   $query = "INSERT INTO users VALUE ('".$username."', '".$realname."',
   '".$emailAddress."', '".$birth_year."', '".$country."', '".$password."', 'member')";
 
-  //$result = $db->query($query);
   $result = mysqli_query($connection,$query);
 
   if ($result)
@@ -129,7 +125,7 @@
 	else
 	{
 		echo '<p>Error inserting details. Error message:</p>';
-		echo '<p>'.$db->error.'</p>';
+		echo '<p>'.mysqli_error($connection).'</p>';
   }
   
   }

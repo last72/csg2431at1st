@@ -71,7 +71,7 @@
 	else
 	{
 		echo '<p>Error inserting details. Error message:</p>';
-		echo '<p>'.$db->error.'</p>';
+		echo '<p>'.mysqli_error($connection).'</p>';
   }
   }
 ?>

@@ -2,16 +2,16 @@
 //Start or resume a session
 session_start();
 
+
   if ( $_SESSION['level'] == '' )
   {
     header('Location: ../index.php');
     exit;
   }
 
-?>
-<?php include '../func/dbconnection.php';?>
-<?php   // connect to database
-  @ $db = new mysqli('localhost', 'root', 't00r', 'movietalkat1');
+// connect to database
+require '../func/dbconnection.php';
+
   ?>
 <!DOCTYPE html>
 <html>

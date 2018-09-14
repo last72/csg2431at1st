@@ -1,6 +1,5 @@
-<?php //include '../func/dbconnection.php';?>
-<?php   // connect to database
-  // @ $db = new mysqli('localhost', 'root', 't00r', 'movietalkat1');
+<?php
+// connect to database
   require '../func/dbconnection.php';
 
   if (session_status() == PHP_SESSION_NONE) {

@@ -34,7 +34,6 @@
 
         //Get the user's details from the database based on the username submitted in the login form
         $query = "SELECT * FROM users WHERE username='".$_POST['tusername']."'";
-        //$results = $db->query($query);
         $results = mysqli_query($connection,$query);
         
         //If a matching user was found...
