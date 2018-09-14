@@ -65,6 +65,8 @@ While some of the content in this module is likely to be useful in the second as
 * $del_query = 'DELETE FROM users WHERE username = \''.$_GET['del_id'].'\'';
  * the username need to be covered in '' because it's string. a number do not require that.
 * ``` @ $db = new mysqli('localhost', 'root', 't00r', 'movietalkat1');``` is replaced with ```require '../func/dbconnection.php';``` and use ``` $result = mysqli_query($connection,$query);``` instead of ```$result = $db->query($query);```
+* ```mysqli_error($connection)``` will replace ```$db->error```.
+
 
 # Testing account information
 * Username: admin, Password: admin
@@ -78,3 +80,9 @@ Current Sitemap
 
 Example Sitemap
 ![Sitemap](/img/sitemapexample.png?raw=true "exampleSitemap")
+
+# Final Feedback from Lecturer
+* Good work, looks like the functionalityis mostly implemented.
+* I didn't see any link to the edit profile pagein the member site, but instead there is an edit user page in the admin section...  double check the requirements in the brief.
+* If a member has already rated a movie, they should be able to update/change their rating if they try to rate it again.
+* The navigation around the site could be better - a lot of pages only have a back link, so you have to slowly retrace your steps back to the home page before doing something else.
