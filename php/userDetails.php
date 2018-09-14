@@ -45,10 +45,28 @@ require '../func/dbconnection.php';
   while ($row = $results->fetch_assoc())
   {
       echo '<td>'.$row['username'].'</td>';
-      echo '<td>'.$row['real_name'].'</td>';
+
+      if ($row['real_name'] == '')
+      {
+        echo '<td>Not disclosed</td>';
+      }
+      else
+      {
+        echo '<td>'.$row['real_name'].'</td>';
+      }
+
       echo '<td>'.$row['email'].'</td>';
       echo '<td>'.$row['birth_year'].'</td>';
-      echo '<td>'.$row['country'].'</td>';
+
+      if ($row['country'] == '')
+      {
+        echo '<td>Not disclosed</td>';
+      }
+      else
+      {
+        echo '<td>'.$row['country'].'</td>';
+      }
+      
       echo '<td>'.$row['access_level'].'</td>';
   }
   echo '</tr></table>';
