@@ -16,6 +16,9 @@
 </head>
 
 <body>
+<?php require 'navigationbar.php'; ?>
+<div class="container">
+
 <h2><strong>Movies Details</strong></h2>
 
 
@@ -52,6 +55,8 @@
   }
   echo '</table>';
 
+  echo '</br></br>';
+
 // Ratings
 echo '<h2>Rating</h2></br>';
 
@@ -65,25 +70,30 @@ $avg_birth_year = round($row['AVG(rating)']);
 
 echo 'Average Rating: '.$avg_birth_year.'</br>';
 
+echo '</br>';
+
 if ( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'editor' or $_SESSION['level'] == 'member' )
     {
       require 'newrating.php';
     }
 
-
-
+// discussions
+echo '</br></br>';
 echo '<h2>Discussion</h2></br>';
 
 
 $discussion_query = "SELECT * FROM discussion ".'WHERE movie_id ='.$_GET['movie_id'].' ORDER BY post_date';
-  
   // execute the query
-  $discussion_results = mysqli_query($connection, $discussion_query);
+$discussion_results = mysqli_query($connection, $discussion_query);
 
-  
+
+
+  if ($discussion_results->num_rows)
+{
+
   //start the table in which our user list will be shown
   echo '<table><tr>';
-  echo '<th>post date</th><th>user name</th><th>content</th>';
+  echo '<th>Post Date</th><th>User Name</th><th>Content</th>';
   echo '</tr>';
   
   //  loop through the result and display them
@@ -105,6 +115,12 @@ $discussion_query = "SELECT * FROM discussion ".'WHERE movie_id ='.$_GET['movie_
 	  echo '</tr>';
   }
   echo '</table></br>';
+}
+  else
+  {
+    echo '<p>There is no discussion yet. Leave fisrt comment on this movie!</p>';
+  }
+  
 
   if ( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'editor' or $_SESSION['level'] == 'member' )
   {
@@ -116,6 +132,6 @@ $discussion_query = "SELECT * FROM discussion ".'WHERE movie_id ='.$_GET['movie_
 
   echo '<a href="../index.php">Back to Home</a>';
   ?>
-  
+  </div>
   </body>
 </html>
