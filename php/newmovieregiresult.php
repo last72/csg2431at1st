@@ -1,4 +1,18 @@
-<?php require '../func/dbconnection.php';?>
+<?php
+// connect to database
+require '../func/dbconnection.php';
+
+// Start or resume a session
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+
+// Check the access level
+if (!isset($_SESSION['level']))
+{
+  $_SESSION['level'] = '';
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +20,10 @@
 </head>
 
 <body>
+
+<?php require 'navigationbar.php'; ?>
+
+<div class="container">
 <?php
 	//create short variable names from the data received from the form
 	$moviename = $_POST['moviename'];
@@ -20,7 +38,7 @@
   $error_message = '';
 
   // first we'll check if any of our required fields are empty all at once
-  if (empty($moviename) || empty($release_year) || empty($director) || empty($writers) || empty($duration) || empty($summary))
+  if (empty($moviename) || empty($release_year) || empty($director) || empty($writers) || empty($duration))
   {
     $error_message = 'One of the required values was  blank.';
   }
@@ -116,6 +134,7 @@
         <?php echo $summary; ?></td>
     </tr>
   </table>
-  <a href="../">Go Home</a>
+  <p><strong>Click Home at the top to continue.</strong></p>
+  </div>
 </body>
 </html>

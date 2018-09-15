@@ -1,3 +1,19 @@
+<?php
+// connect to database
+require '../func/dbconnection.php';
+
+// Start or resume a session
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+
+// Check the access level
+if (!isset($_SESSION['level']))
+{
+  $_SESSION['level'] = '';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +21,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Login</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 <style type="text/css">
@@ -15,16 +31,15 @@
 </style>
 </head>
 <body>
-<?php
-   //php code goes here
-    require './func/dbconnection.php';
-    //Start or resume a session
-    session_start();
+<?php require 'navigationbar.php'; ?>
 
+<div class="container">
+
+<?php
     //If the "uname" session variable is set and not empty, redirect to menu page
     if ( isset($_SESSION['uname']) && $_SESSION['uname'] != '' )
     {
-        header('Location: index.php');
+        header('Location: ../index.php');
         exit;
     }
 
@@ -52,7 +67,7 @@
                 $_SESSION['uname'] = $user['username'];
                 $_SESSION['level'] = $user['access_level'];
                 $_SESSION['last_login_timestamp'] = time();
-                header('Location: index.php');
+                header('Location: ../index.php');
                 exit;
                 
             }
@@ -102,8 +117,12 @@
         </div> 
 
 
+    <a href="registration.php">Rigister</a>
+    
 
     </div>
+    
+</div>
 </div>
 </body>
 </html>

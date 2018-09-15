@@ -65,10 +65,16 @@ $rating_query = "SELECT AVG(rating) FROM ratings ".'WHERE movie_id ='.$_GET['mov
   // execute the query
 $rating_results = mysqli_query($connection, $rating_query);
 $row = $rating_results->fetch_assoc();
-$avg_birth_year = round($row['AVG(rating)']);
+$avg_rating = round($row['AVG(rating)']);
 
-
-echo 'Average Rating: '.$avg_birth_year.'</br>';
+if($avg_rating != '0')
+{
+  echo 'Average Rating: '.$avg_rating.'</br>';
+}
+else
+{
+  echo '<p>There is no discussion yet. Leave fisrt comment on this movie!</p>';
+}
 
 echo '</br>';
 
@@ -130,7 +136,6 @@ $discussion_results = mysqli_query($connection, $discussion_query);
 
 }
 
-  echo '<a href="../index.php">Back to Home</a>';
   ?>
   </div>
   </body>

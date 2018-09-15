@@ -52,7 +52,7 @@ if (session_status() == PHP_SESSION_NONE) {
 	if ( !isset($_SESSION['uname']) || $_SESSION['uname'] == '' )
 	{
 		echo '<li class="nav-item">
-			<a class="nav-link" href="login.php">Sign In</a>
+			<a class="nav-link" href="php/login.php">Sign In</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="php/registration.php">Register</a>

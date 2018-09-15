@@ -1,18 +1,19 @@
-<?php   // connect to database
-  require '../func/dbconnection.php';
+<?php
+// connect to database
+require '../func/dbconnection.php';
 
-
-//Start or resume a session
+// Start or resume a session
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
+
+// Check the access level
 if (!isset($_SESSION['level']))
 {
   $_SESSION['level'] = '';
 }
-  ?>
+?>
 
-  
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,9 +24,13 @@ if (!isset($_SESSION['level']))
 </head>
 
 <body>
+
+<?php require 'navigationbar.php'; ?>
+
+<div class="container">
+
+
 <h2><strong>List Movies</strong></h2>
-
-
 
 <?php
   //  delete user if del_id GET data exists
@@ -78,8 +83,8 @@ if (!isset($_SESSION['level']))
   }
   echo '</table>';
 
-  echo '<a href="../index.php">Back to Home</a>';
   ?>
-  
+      </div>
+
   </body>
 </html>

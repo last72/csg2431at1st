@@ -1,6 +1,17 @@
 <?php
-//Start or resume a session
-session_start();
+// connect to database
+require '../func/dbconnection.php';
+
+// Start or resume a session
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+
+// Check the access level
+if (!isset($_SESSION['level']))
+{
+  $_SESSION['level'] = '';
+}
 
   if ( $_SESSION['level'] != 'admin' )
   {
@@ -11,7 +22,6 @@ session_start();
 
 ?>
 <!-- // connect to database -->
-<?php require '../func/dbconnection.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,6 +32,9 @@ session_start();
 </head>
 
 <body>
+<?php require 'navigationbar.php'; ?>
+
+<div class="container">
 <h2><strong>List User</strong></h2>
 
 
@@ -64,10 +77,7 @@ session_start();
 	    onclick="return confirm(\'Are you sure you want to delete this user?\');">Delete</a></td></tr>';
   }
   echo '</table>';
-  echo '<a href="../index.php">Back to Home</a>';
-  echo '<a href="../logout.php">Sign Out</a>';
-
   ?>
-  
+  </div>
   </body>
 </html>

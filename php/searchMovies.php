@@ -1,7 +1,6 @@
 <?php   // connect to database
   require '../func/dbconnection.php';
 
-
 //Start or resume a session
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
@@ -10,7 +9,9 @@ if (!isset($_SESSION['level']))
 {
   $_SESSION['level'] = '';
 }
-  ?><!DOCTYPE html>
+  ?>
+  
+<!DOCTYPE html>
 <html>
 <head>
   <title>List Movies</title>
@@ -20,6 +21,12 @@ if (!isset($_SESSION['level']))
 </head>
 
 <body>
+
+<?php require 'navigationbar.php'; ?>
+
+
+<div class="container">
+
 <h2><strong>Search Movies Results</strong></h2>
 
 
@@ -75,9 +82,7 @@ if (!isset($_SESSION['level']))
   }
 
   echo '</table>';
-  echo '<a href="../index.php">Back to Home</a>';
-
   ?>
-  
+  </div>
   </body>
 </html>

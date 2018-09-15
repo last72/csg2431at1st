@@ -1,9 +1,17 @@
 <?php
-//Start or resume a session
-session_start();
-
-// db connection
+// connect to database
 require '../func/dbconnection.php';
+
+// Start or resume a session
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+
+// Check the access level
+if (!isset($_SESSION['level']))
+{
+  $_SESSION['level'] = '';
+}
 
 
   if (!( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'editor' ))
@@ -22,6 +30,10 @@ require '../func/dbconnection.php';
 </head>
 
 <body>
+<?php require 'navigationbar.php'; ?>
+
+<div class="container">
+
 <h2><strong>New Movie Details</strong></h2>
 <form name="MovieForm" method="post" action="newmovieregiresult.php" onsubmit="return ValidateMovieForm();">
   <table style="width: 500px; border: 0px;" cellspacing="1" cellpadding="1">
@@ -92,5 +104,6 @@ require '../func/dbconnection.php';
   <a href="javascript: history.back();">Go Back</a>
 </form>
 <?php   echo '<a href="../logout.php">Sign Out</a>';?>
+</div>
 </body>
 </html>

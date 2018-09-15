@@ -1,9 +1,11 @@
-<?php 
-  //Start or resume a session
-  session_start();
-  // connect to database
-
+<?php
+// connect to database
 require '../func/dbconnection.php';
+
+// Start or resume a session
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
 
 if (!( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'editor' ))
 {
@@ -67,12 +69,15 @@ if (!( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'editor' ))
 	
 	if ($result)
 	{
-		echo '<p>Movie details updated!</p>';
+    // echo '<p>Movie details updated!</p>';
+    echo "<script type='text/javascript'>alert('Movie details updated!');</script>";
 	}
 	else
 	{
-		echo '<p>Error updating details. Error message:</p>';
-		echo '<p>'.mysqli_error($connection).'</p>';
+		// echo '<p>Error updating details. Error message:</p>';
+    // echo '<p>'.mysqli_error($connection).'</p>';
+    echo "<script type='text/javascript'>alert('Error updating details. Error message: ".mysqli_error($connection)."');</script>";
+
 	}
 	
   }
@@ -85,7 +90,6 @@ if (!( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'editor' ))
   {
       //  fetch the user's details and store them in $row
       
-      echo "editing in progress ";
       $edit_query = 'SELECT * FROM movies WHERE movie_id = \''.$_GET['edit_id'].'\'';
       $result = mysqli_query($connection, $edit_query);
       $row = $result->fetch_assoc();
@@ -107,6 +111,11 @@ if (!( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'editor' ))
 </head>
 
 <body>
+
+<?php require 'navigationbar.php'; ?>
+
+<div class="container">
+
 <h2><strong>User Details</strong></h2>
 <form name="editUserForm" method="post" action="editMovie.php?edit_id=<?php echo $_GET['edit_id']?>">
   
@@ -155,5 +164,6 @@ if (!( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'editor' ))
   <?php echo '<a href="../logout.php">Sign Out</a>'; ?>
 
 </form>
+</div>
 </body>
 </html>

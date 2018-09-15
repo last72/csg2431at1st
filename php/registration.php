@@ -1,6 +1,18 @@
-<?php 
-  require '../func/dbconnection.php';
-  ?>
+<?php
+// connect to database
+require '../func/dbconnection.php';
+
+// Start or resume a session
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+
+// Check the access level
+if (!isset($_SESSION['level']))
+{
+  $_SESSION['level'] = '';
+}
+?>
 
 <!DOCTYPE html>
 <html>
@@ -10,6 +22,12 @@
 </head>
 
 <body>
+
+<?php require 'navigationbar.php'; ?>
+
+<div class="container">
+
+
 <h2><strong>New User Details</strong></h2>
 <form name="UserForm" method="post" action="registrationresult.php"  onsubmit="return ValidateUserForm();">
   <table style="width: 500px; border: 0px;" cellspacing="1" cellpadding="1">
@@ -333,5 +351,6 @@
   </table>
   <a href="javascript: history.back();">Go Back</a>
 </form>
+</div>
 </body>
 </html>

@@ -1,9 +1,11 @@
 <?php
-//Start or resume a session
-session_start();
-
 // connect to database
-include '../func/dbconnection.php';
+require '../func/dbconnection.php';
+
+// Start or resume a session
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
 
   // Only admin or user can edit.
   if ( !($_SESSION['level'] == 'admin' || $_SESSION['uname'] == $_GET['edit_id']))
@@ -96,7 +98,11 @@ include '../func/dbconnection.php';
   {
     // we'll just provide the user with the error message and a back link if there is an error
     // the exit command tells the server/PHP to stop processing the script at that point
-    echo 'Error: '.$error_message.' <a href="javascript: history.back();">Go Back</a>.';
+    // echo 'Error: '.$error_message.' <a href="javascript: history.back();">Go Back</a>.';
+    echo "<script type='text/javascript'>alert('Error: ".$error_message."');</script>";
+    echo "<script type='text/javascript'>javascript: history.back();</script>";
+
+
     echo '</body></html>';
     exit;
   }
@@ -104,7 +110,10 @@ include '../func/dbconnection.php';
   {
     //  if there was no error, show success message
     // (and them the script continues to the HTML section that displays the results)
-    echo '<p><strong>Form submitted sucessfully!</strong></p>';
+    // echo '<p><strong>Form submitted sucessfully!</strong></p>';
+
+    echo "<script type='text/javascript'>alert('Form submitted sucessfully!');</script>";
+
 	
 	
 	$query = "UPDATE users
@@ -121,12 +130,15 @@ include '../func/dbconnection.php';
 	
 	if ($result)
 	{
-		echo '<p>User details updated!</p>';
+    echo "<script type='text/javascript'>alert('User details updated!');</script>";
 	}
 	else
 	{
-    echo '<p>Error updating details :</p>';
-    echo mysqli_error($connection);
+    // echo '<p>Error updating details :</p>';
+    // echo mysqli_error($connection);
+
+    echo "<script type='text/javascript'>alert('Error updating details :".mysqli_error($connection)."');</script>";
+
 	}
 	
   }
@@ -139,7 +151,6 @@ include '../func/dbconnection.php';
   {
       //  fetch the user's details and store them in $row
       
-      echo "editing in progress ";
       $edit_query = 'SELECT * FROM users WHERE username = \''.$_GET['edit_id'].'\'';
       $result = mysqli_query($connection, $edit_query);
       
@@ -162,6 +173,9 @@ include '../func/dbconnection.php';
 </head>
 
 <body>
+<?php require 'navigationbar.php'; ?>
+
+<div class="container">
 <h2><strong>User Details</strong></h2>
 <form name="UserForm" method="post" action="editUser.php?edit_id=<?php echo $_GET['edit_id']?>" onsubmit="return ValidateUserForm();">
   
@@ -229,5 +243,6 @@ include '../func/dbconnection.php';
 </form>
 <?php   echo '<a href="../logout.php">Sign Out</a>'; ?>
 
+</div>
 </body>
 </html>

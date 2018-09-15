@@ -22,6 +22,9 @@ require '../func/dbconnection.php';
   </style>
 </head>
 <body>
+<?php require 'navigationbar.php'; ?>
+
+<div class="container">
 <h2><strong>User Details</strong></h2>
 
 <?php
@@ -72,10 +75,8 @@ require '../func/dbconnection.php';
   echo '</tr></table>';
 
 }
-  echo '<a href="../index.php">Back to Home</a>';
-  echo '<a href="../logout.php">Sign Out</a>';
 
   ?>
-  
+  </div>
   </body>
 </html>

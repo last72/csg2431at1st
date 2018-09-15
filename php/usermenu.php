@@ -23,7 +23,6 @@ if ( $_SESSION['level'] == 'admin' )
 
 	echo '* <a href="php/newmovieregi.php">New Movie</a><br />';
 	echo '* <a href="php/listMovies.php">List Movie</a><br />';
-	echo '* <a href="php/editMovie.php">Edit Movie</a><br />';
 
 }
 
@@ -32,7 +31,6 @@ if ( $_SESSION['level'] == 'editor' )
 {
 	echo '* <a href="php/newmovieregi.php">New Movie</a><br />';
 	echo '* <a href="php/listMovies.php">List Movie</a><br />';
-	echo '* <a href="php/editMovie.php">Edit Movie</a><br />';
 }
 
 // member menu
@@ -44,8 +42,6 @@ if ( $_SESSION['level'] == 'member' )
 }	
 
 }
-
-echo '<br /><p><a href="logout.php">Log Out</a></p>';
 
 
 ?>
