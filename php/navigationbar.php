@@ -12,20 +12,31 @@
 <li class="nav-item active">
 <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>
 </li>
-    <!-- <li class="nav-item dropdown">
-<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    [dev purpose]
-</a>
-<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <a class="dropdown-item" href="php/registration.php">New User</a>
-<a class="dropdown-item" href="php/listUsers.php">List User</a>
-<a class="dropdown-item" href="php/editUser.php">Edit User</a>
-<div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="php/newmovieregi.php">New Movie</a>
-        <a class="dropdown-item" href="php/listMovies.php">List Movie</a>
-<a class="dropdown-item" href="php/editMovie.php">Edit Movie</a>
-        </div>
-</li> -->
+
+
+<?php
+if ( $_SESSION['level'] == 'admin' )
+{
+	echo '<li class="nav-item"><a class="nav-link" href="listUsers.php">List User</a></li><br />';
+	echo '<li class="nav-item"><a class="nav-link" href="newmovieregi.php">New Movie</a></li><br />';
+}
+
+if ( $_SESSION['level'] == 'editor' )
+{
+	echo '<li class="nav-item"><a class="nav-link" href="newmovieregi.php">New Movie</a></li><br />';
+}
+
+?>
+	<a class="nav-link" href="listMovies.php">List Movie</a>
+<?php
+if ( $_SESSION['level'] == 'member' )
+{
+	echo '<li class="nav-item"><a class="nav-link" href="editUser.php?edit_id='.$_SESSION['uname'].'">Edit Profile</a></li><br />';
+	echo '<li class="nav-item"><a class="nav-link" href="userDetails.php?username='.$_SESSION['uname'].'">View Profile</a></li><br />';
+}
+?>
+	
+
 
 	<?php 
 	//If the "uname" session variable is not set or is empty, redirect to login page
