@@ -59,7 +59,7 @@ if (!DBHOST)
   </table>
   <?php
   // check status of rating update.
-  if (isset($_SESSION['updated_rating']))
+  if (isset($_SESSION['updated_rating']) && ($_SESSION['updated_rating'] != ''))
   {
     // echo '<p>The rating is updated to '.$_SESSION['updated_rating'].'</p>';
     echo "<script type='text/javascript'>alert('Now the rating is updated to ".$_SESSION['updated_rating']."');</script>";
