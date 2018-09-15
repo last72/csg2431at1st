@@ -57,8 +57,15 @@ if (!DBHOST)
         <div align="right">* indicates required field</div></td>
     </tr>
   </table>
-  <a href="javascript: history.back();">Go Back</a>
+  <?php
+  // check status of rating update.
+  if (isset($_SESSION['updated_rating']))
+  {
+    // echo '<p>The rating is updated to '.$_SESSION['updated_rating'].'</p>';
+    echo "<script type='text/javascript'>alert('Now the rating is updated to ".$_SESSION['updated_rating']."');</script>";
+    $_SESSION['updated_rating'] = '';
+  }
+  ?>
 </form>
-<?php   echo '<a href="../logout.php">Sign Out</a>';?>
 </body>
 </html>

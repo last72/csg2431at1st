@@ -70,9 +70,7 @@ if ($duplicate_results->num_rows > 0)
   $query = "UPDATE ratings SET movie_id = '".$_POST['movie_id']."', username = '".$_SESSION['uname']."', rating = '".$_POST['rating']."'
   WHERE movie_id = '".$_POST['movie_id']."' AND username = '".$_SESSION['uname']."'";
 
-  echo $query;
-
-  echo "<script type='text/javascript'>alert('updated');</script>";
+  $_SESSION['updated_rating'] = $_POST['rating'];
 
 }
 
