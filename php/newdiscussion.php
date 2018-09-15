@@ -25,16 +25,16 @@ if (!DBHOST)
 </head>
 
 <body>
-<h3><strong>movie discussion</strong></h3>
+<h3><strong>Movie Discussion</strong></h3>
 <form name="DiscussiongForm" method="post" action="newdiscussionresult.php" onsubmit="return ValidateMovieForm();">
  <input name="movie_id" type="hidden" value="<?php echo $_SESSION['movie_id'];  ?>" />
   <table style="width: 500px; border: 0px;" cellspacing="1" cellpadding="1">
   <tr>
-      <td colspan="2"><strong>movie discussion</strong></td>
+      <td colspan="2"><strong>Movie Discussion</strong></td>
     </tr>
   
     <tr style="background-color: #FFFFFF;"> 
-      <td>content</td>
+      <td>Comment</td>
       <td> 
         <textarea name="content" type="text" style="width: 200px;" maxlength="100" required></textarea>*</td>
     </tr>

@@ -25,15 +25,15 @@ if (!DBHOST)
 </head>
 
 <body>
-<h3><strong>movie rating</strong></h3>
+<h3><strong>Movie Rating</strong></h3>
 <form name="ratingForm" method="post" action="newratingresult.php" onsubmit="return ValidateMovieForm();">
  <input name="movie_id" type="hidden" value="<?php echo $_SESSION['movie_id'];  ?>" />
   <table style="width: 500px; border: 0px;" cellspacing="1" cellpadding="1">
   <tr>
-      <td colspan="2"><strong>movie rating</strong></td>
+      <td colspan="2"><strong>Movie Rating</strong></td>
     </tr>
   <tr style="background-color: #FFFFFF;"> 
-      <td>rating</td>
+      <td>Rating</td>
       <td>         
         <select name="rating" style="width: 200px;" required>
           <?php
