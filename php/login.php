@@ -61,7 +61,7 @@ if (!isset($_SESSION['level']))
             // echo $passwordresult;
 
             //if (password_verify($_POST['tpassword'], $user['password']))
-            if ($_POST['tpassword'] = $user['password'])
+            if ($_POST['tpassword'] == $user['password'])
             {
                 //Set session variables then redirect to menu page
                 $_SESSION['uname'] = $user['username'];
