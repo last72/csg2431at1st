@@ -132,3 +132,15 @@ function ValidateMovieForm()
 
 	return true;
 }
+
+// Validate php/newmovierigi.php form
+function ValidateaccesslevelForm()
+{
+	if (document.accesslevelchange.accesslevel.value == '')
+	{
+		alert('accesslevel field cannot be blank.');
+	document.MovieForm.accesslevel.focus();
+	return false;
+	}
+
+}

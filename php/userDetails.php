@@ -77,6 +77,19 @@ require '../func/dbconnection.php';
 }
 
   ?>
+
+  <?php
+    if ( $_SESSION['level'] == 'admin' )
+    {
+
+      $_SESSION['userdetail'] = $_GET['username'];
+
+      echo '</br>';
+      require 'accesslevelchange.php';
+    
+    
+    }
+  ?>
   </div>
   </body>
 </html>
