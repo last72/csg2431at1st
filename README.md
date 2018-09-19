@@ -9,10 +9,11 @@ Use import function in myphpadmin to demonstrate development environment.
 ## Regarding to Assessement, Requirements
 
 ### Access Level Changing (Mark 4)
-Feature: change access level of user to member, moderator, or admin in **php/userDetails.php** page.
+~~Feature: change access level of user to member, moderator, or admin in **php/userDetails.php** page.
 Access level: Admin exclusive.
 Things to check: Degrading admin should be done when there is more than two admin in db.
-Expected time to developing: 3 hours.
+Expected time to developing: 3 hours.~~
+Actual time taken: 1 Hour 16 minutes (19/09/2018)
 
 ### Moderator User Level (Mark 9)
 Feature: Create new access level that has two distint feature on the top of member privilege (Put comment in discussion, rating, view profile, update their profile). 1. Delete any discussion post (including admin, moderator, and member's post). 2. Ban member in other users **php/userDetails.php** page.
