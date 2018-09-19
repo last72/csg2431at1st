@@ -46,7 +46,7 @@ if ( $_SESSION['level'] == 'member' )
 			<a class="nav-link" href="login.php">Sign In</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="php/registration.php">Register</a>
+			<a class="nav-link" href="registration.php">Register</a>
 		</li>'; 
 
 	}

@@ -21,7 +21,7 @@ if (!DBHOST)
 <html>
 <head>
   <title>Leave rating</title>
-	<link rel="stylesheet" type="text/css" href="css/validation.css">
+	<link rel="stylesheet" type="text/javascript" href="../js/validation.js">
 </head>
 
 <body>
