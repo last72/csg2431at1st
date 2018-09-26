@@ -16,11 +16,11 @@ Use import function in myphpadmin to demonstrate development environment.
 * Actual time taken: 1 Hour 16 minutes (19/09/2018)
 
 ### Moderator User Level (Mark 9)
-- [ ] Feature: Create new access level that has two distint feature on the top of member privilege (Put comment in discussion, rating, view profile, update their profile). 1. Delete any discussion post (including admin, moderator, and member's post). 2. Ban member in other users **php/userDetails.php** page.
-- [ ] Things to create: Under **users** table, banned_until DATETIME column and a ban_reason VARCHAR column which can be empty.
-- [ ] Things to check: Delete confirm message when deleting discussions. When user login, current time needs to be bigger than banned_until value. Otherwise, a message shows banned_until time and ban_reason.
-- [ ] Expected time to developing: 5 hours.
-* Actual time taken:
+- [X] Feature: Create new access level that has two distint feature on the top of member privilege (Put comment in discussion, rating, view profile, update their profile). 1. Delete any discussion post (including admin, moderator, and member's post). 2. Ban member in other users **php/userDetails.php** page.
+- [X] Things to create: Under **users** table, banned_until DATETIME column and a ban_reason VARCHAR column which can be empty.
+- [X] Things to check: Delete confirm message when deleting discussions. When user login, current time needs to be bigger than banned_until value. Otherwise, a message shows banned_until time and ban_reason.
+- [X] Expected time to developing: 5 hours.
+* Actual time taken: About 2 Hours (26/09/2018)
 
 ### Site Statistics (Mark 6)
 - [ ] Feature: Build a statistics page that shows number of users, average user age, number of movies, most discussed movies, and highest average rating movie.

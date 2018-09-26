@@ -63,12 +63,21 @@ if (!isset($_SESSION['level']))
             //if (password_verify($_POST['tpassword'], $user['password']))
             if ($_POST['tpassword'] == $user['password'])
             {
-                //Set session variables then redirect to menu page
-                $_SESSION['uname'] = $user['username'];
-                $_SESSION['level'] = $user['access_level'];
-                $_SESSION['last_login_timestamp'] = time();
-                header('Location: ../index.php');
-                exit;
+                if(strtotime($user['banned_until']) < time())
+                {
+                    //Set session variables then redirect to menu page
+                    $_SESSION['uname'] = $user['username'];
+                    $_SESSION['level'] = $user['access_level'];
+                    $_SESSION['last_login_timestamp'] = time();
+                    header('Location: ../index.php');
+                    exit;
+                }
+               else
+                {
+                    $messageno = 'You are currently banned until: <br />'.$user['banned_until'].'<br />
+                    Banned reason: '.$user['ban_reason'];
+                }
+                
                 
             }
             else //If password is not valid, show error message
@@ -118,6 +127,7 @@ if (!isset($_SESSION['level']))
 
 
     <a href="registration.php">Rigister</a>
+
     
 
     </div>

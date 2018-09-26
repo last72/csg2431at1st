@@ -28,7 +28,6 @@ require '../func/dbconnection.php';
 <h2><strong>User Details</strong></h2>
 
 <?php
-  //  delete user if del_id GET data exists
   if (isset($_GET['username']))
   {
 	  
@@ -41,7 +40,14 @@ require '../func/dbconnection.php';
   
   //start the table in which our user list will be shown
   echo '<table><tr>';
-  echo '<th>Username</th><th>Real Name</th><th>Email</th><th>Birth Year</th><th>Country</th><th>Access level</th>';
+  echo '<th>Username</th>
+  <th>Real Name</th>
+  <th>Email</th>
+  <th>Birth Year</th>
+  <th>Country</th>
+  <th>Access level</th>
+  <th>Banned Until</th>
+  <th>Ban Reason</th>';
   echo '</tr>';
   
   //  loop through the result and display them
@@ -69,10 +75,32 @@ require '../func/dbconnection.php';
       {
         echo '<td>'.$row['country'].'</td>';
       }
-      
+      $userdetailaccesslevel = $row['access_level'];
+
       echo '<td>'.$row['access_level'].'</td>';
+
+      if ($row['banned_until'] == '0000-00-00 00:00:00')
+      {
+        echo '<td>Not currently banned</td>';
+      }
+      else
+      {
+        echo '<td>'.$row['banned_until'].'</td>';
+      }
+
+      if ($row['ban_reason'] == '')
+      {
+        echo '<td>Not currently banned</td>';
+      }
+      else
+      {
+        echo '<td>'.$row['ban_reason'].'</td>';
+      }
+
+
   }
   echo '</tr></table>';
+
 
 }
 
@@ -89,6 +117,20 @@ require '../func/dbconnection.php';
     
     
     }
+
+    if (($_SESSION['level'] == 'moderator') && ($userdetailaccesslevel == 'member'))
+    {
+
+      $_SESSION['userdetail'] = $_GET['username'];
+
+      echo '</br>';
+      require 'userban.php';
+    
+    
+    }
+
+    echo $row['access_level'];
+
   ?>
   </div>
   </body>

@@ -106,19 +106,25 @@ CREATE TABLE `users` (
   `birth_year` int(4) UNSIGNED NOT NULL,
   `country` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `access_level` varchar(10) NOT NULL
+  `access_level` varchar(10) NOT NULL,
+  `banned_until` datetime DEFAULT NULL,
+  `ban_reason` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`username`, `real_name`, `email`, `birth_year`, `country`, `password`, `access_level`) VALUES
-('asmith', 'Adam Smith', 'smitho@gmail.com', 1984, '', 'abc123', 'admin'),
-('jbloggs', 'Joe Bloggs', 'Howard', 1990, 'Australia', 'swordfish99', 'member'),
-('admin', 'admin', '11@a.com', 1998, 'United States', 'admin', 'admin'),
-('moderator', 'moderator', '11@a.com', 1998, 'United States', 'moderator', 'moderator'),
-('member', 'member', '11@a.com', 1998, 'United States', 'member', 'member');
+INSERT INTO `users` (`username`, `real_name`, `email`, `birth_year`, `country`, `password`, `access_level`, `banned_until`, `ban_reason`) VALUES
+('1', '', '', 0, '', '1', 'member', '0000-00-00 00:00:00', ''),
+('2', '', '', 0, '', '2', 'admin', '0000-00-00 00:00:00', ''),
+('3', '3 is number', 'a@a.com', 1999, '3', '3', 'moderator', '0000-00-00 00:00:00', ''),
+('adams', 'Kushal', 'kushalp169@gmail.com', 1994, 'United States', 'admas', 'Admin', '0000-00-00 00:00:00', ''),
+('admin', 'admin', '11@a.com', 1998, 'United States', '$2y$10$l.QqVO3NUVweKk58XvHviu.Mv7f.ApjTJx7wh4YO6tS', 'member', '0000-00-00 00:00:00', ''),
+('asmith', 'Adam Smith', 'smitho@gmail.com', 1984, '', 'abc123', 'member', '0000-00-00 00:00:00', ''),
+('editor', 'editor', '11@a.com', 1998, 'United States', '$2y$10$YbSch4indqWY8FSA81ykU.MV3Qgkb6SXL/S45aPGrg4', 'member', '0000-00-00 00:00:00', ''),
+('jbloggs', 'Joe Bloggs', 'Howard', 1990, 'Australia', 'swordfish99', 'member', '0000-00-00 00:00:00', ''),
+('member', 'member is my', '11@a.com', 2000, 'United States', '$2y$10$MOqlMDsvJqzfwkskKq5EPO0rV6Je9hEfwnA90VDcXBe', 'moderator', '0000-00-00 00:00:00', '');
 
 
 --
