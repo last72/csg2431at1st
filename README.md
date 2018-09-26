@@ -9,27 +9,27 @@ Use import function in myphpadmin to demonstrate development environment.
 ## Regarding to Assessement, Requirements
 
 ### Access Level Changing (Mark 4)
-~~Feature: change access level of user to member, moderator, or admin in **php/userDetails.php** page.
-Access level: Admin exclusive.
-Things to check: Degrading admin should be done when there is more than two admin in db.
-Expected time to developing: 3 hours.~~
-Actual time taken: 1 Hour 16 minutes (19/09/2018)
+- [X] Feature: change access level of user to member, moderator, or admin in **php/userDetails.php** page.
+- [X] Access level: Admin exclusive.
+- [X] Things to check: Degrading admin should be done when there is more than two admin in db.
+- [X] Expected time to developing: 3 hours.
+* Actual time taken: 1 Hour 16 minutes (19/09/2018)
 
 ### Moderator User Level (Mark 9)
-Feature: Create new access level that has two distint feature on the top of member privilege (Put comment in discussion, rating, view profile, update their profile). 1. Delete any discussion post (including admin, moderator, and member's post). 2. Ban member in other users **php/userDetails.php** page.
-Things to create: Under **users** table, banned_until DATETIME column and a ban_reason VARCHAR column which can be empty.
-Things to check: Delete confirm message when deleting discussions. When user login, current time needs to be bigger than banned_until value. Otherwise, a message shows banned_until time and ban_reason.
-Expected time to developing: 5 hours.
+- [ ] Feature: Create new access level that has two distint feature on the top of member privilege (Put comment in discussion, rating, view profile, update their profile). 1. Delete any discussion post (including admin, moderator, and member's post). 2. Ban member in other users **php/userDetails.php** page.
+- [ ] Things to create: Under **users** table, banned_until DATETIME column and a ban_reason VARCHAR column which can be empty.
+- [ ] Things to check: Delete confirm message when deleting discussions. When user login, current time needs to be bigger than banned_until value. Otherwise, a message shows banned_until time and ban_reason.
+- [ ] Expected time to developing: 5 hours.
+* Actual time taken:
 
 ### Site Statistics (Mark 6)
-Feature: Build a statistics page that shows number of users, average user age, number of movies, most discussed movies, and highest average rating movie.
-Access level: Admin exclusive.
-
+- [ ] Feature: Build a statistics page that shows number of users, average user age, number of movies, most discussed movies, and highest average rating movie.
+- [ ] Access level: Admin exclusive.
+* Actual time taken:
 
 ### Advanced Search Capabilities (Mark 6)
-Feature: Create advanced search feature that can use director, summary, release year, or duration search.
-
-
+- [ ] Feature: Create advanced search feature that can use director, summary, release year, or duration search.
+* Actual time taken:
 
 ## Weekly works
 
