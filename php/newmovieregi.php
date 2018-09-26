@@ -14,7 +14,7 @@ if (!isset($_SESSION['level']))
 }
 
 
-  if (!( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'editor' ))
+  if (!( $_SESSION['level'] == 'admin' ))
 {
     header('Location: ../index.php');
     exit;

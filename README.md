@@ -54,7 +54,6 @@ Student email: wchoi0@our.ecu.ecu.au, Student number: 10445178
 
 # Testing account information
 * Username: admin, Password: admin
-* Username: editor, Password: editor
 * Username: member, Password: member
  
 # Sitemap diagram

@@ -21,11 +21,6 @@ if ( $_SESSION['level'] == 'admin' )
 	echo '<li class="nav-item"><a class="nav-link" href="newmovieregi.php">New Movie</a></li><br />';
 }
 
-if ( $_SESSION['level'] == 'editor' )
-{
-	echo '<li class="nav-item"><a class="nav-link" href="newmovieregi.php">New Movie</a></li><br />';
-}
-
 ?>
 	<a class="nav-link" href="listMovies.php">List Movie</a>
 <?php

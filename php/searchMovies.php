@@ -66,7 +66,7 @@ if (!isset($_SESSION['level']))
     echo '<td><a href="movieDetails.php?movie_id='.$row['movie_id'].'">Details</a> ';
 
 
-    if ( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'editor' )
+    if ( $_SESSION['level'] == 'admin'  )
     {
       echo '<a href="editMovie.php?edit_id='.$row['movie_id'].'">Edit</a> ';
     }

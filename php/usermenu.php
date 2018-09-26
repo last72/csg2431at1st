@@ -26,13 +26,6 @@ if ( $_SESSION['level'] == 'admin' )
 
 }
 
-// Editor menu
-if ( $_SESSION['level'] == 'editor' )
-{
-	echo '* <a href="php/newmovieregi.php">New Movie</a><br />';
-	echo '* <a href="php/listMovies.php">List Movie</a><br />';
-}
-
 // member menu
 if ( $_SESSION['level'] == 'member' )
 {

@@ -5,7 +5,7 @@ if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
 
-if (!( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'editor' or $_SESSION['level'] == 'member' ))
+if (!( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'member' ))
 {
 header('Location: ../index.php');
 exit;
