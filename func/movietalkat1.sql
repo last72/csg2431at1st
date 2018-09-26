@@ -117,6 +117,7 @@ INSERT INTO `users` (`username`, `real_name`, `email`, `birth_year`, `country`, 
 ('asmith', 'Adam Smith', 'smitho@gmail.com', 1984, '', 'abc123', 'admin'),
 ('jbloggs', 'Joe Bloggs', 'Howard', 1990, 'Australia', 'swordfish99', 'member'),
 ('admin', 'admin', '11@a.com', 1998, 'United States', 'admin', 'admin'),
+('moderator', 'moderator', '11@a.com', 1998, 'United States', 'moderator', 'moderator'),
 ('member', 'member', '11@a.com', 1998, 'United States', 'member', 'member');
 
 

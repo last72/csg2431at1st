@@ -78,7 +78,7 @@ else
 
 echo '</br>';
 
-if ( $_SESSION['level'] == 'admin'  or $_SESSION['level'] == 'member' )
+if ( $_SESSION['level'] == 'admin'  or $_SESSION['level'] == 'moderator' or $_SESSION['level'] == 'member')
     {
       require 'newrating.php';
     }
@@ -128,7 +128,7 @@ $discussion_results = mysqli_query($connection, $discussion_query);
   }
   
 
-  if ( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'member' )
+  if ( $_SESSION['level'] == 'admin' or $_SESSION['level'] == 'moderator' or $_SESSION['level'] == 'member' )
   {
     require 'newdiscussion.php';
   }

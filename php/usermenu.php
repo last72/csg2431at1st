@@ -26,13 +26,16 @@ if ( $_SESSION['level'] == 'admin' )
 
 }
 
+// moderator menu
 // member menu
-if ( $_SESSION['level'] == 'member' )
+if ( $_SESSION['level'] == 'member' or $_SESSION['level'] == 'moderator')
 {
 	echo '* <a href="php/listMovies.php">List Movie</a><br />';
 	echo '* <a href="php/editUser.php?edit_id='.$_SESSION['uname'].'">Edit Profile</a><br />';
 	echo '* <a href="php/userDetails.php?username='.$_SESSION['uname'].'">View Profile</a><br />';
 }	
+
+
 
 }
 

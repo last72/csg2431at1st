@@ -24,7 +24,7 @@ if ( $_SESSION['level'] == 'admin' )
 ?>
 	<a class="nav-link" href="listMovies.php">List Movie</a>
 <?php
-if ( $_SESSION['level'] == 'member' )
+if ( $_SESSION['level'] == 'member' or $_SESSION['level'] == 'moderator' )
 {
 	echo '<li class="nav-item"><a class="nav-link" href="editUser.php?edit_id='.$_SESSION['uname'].'">Edit Profile</a></li><br />';
 	echo '<li class="nav-item"><a class="nav-link" href="userDetails.php?username='.$_SESSION['uname'].'">View Profile</a></li><br />';

@@ -192,12 +192,12 @@ if (session_status() == PHP_SESSION_NONE) {
     <tr style="background-color: #FFFFFF;"> 
       <td>Password</td>
       <td> 
-        <input name="password" type="password" style="width: 200px;" maxlength="20"  />*</td>
+        <input name="password" type="password" style="width: 200px;" maxlength="20"  required/>*</td>
     </tr>
     <tr style="background-color: #FFFFFF;"> 
       <td>Confirm Password</td>
       <td> 
-        <input name="confirmPassword" type="password" style="width: 200px;" maxlength="20"  />*</td>
+        <input name="confirmPassword" type="password" style="width: 200px;" maxlength="20"  required/>*</td>
     </tr>
     <tr>
       <td colspan="2">&nbsp;</td>
@@ -215,7 +215,7 @@ if (session_status() == PHP_SESSION_NONE) {
       <td>Birth year</td>
       <td> 
         <input name="birth_year" type="text" style="width: 200px;" maxlength="4" value="<?php echo
-		$row ['birth_year']; ?>" />*</td>
+		$row ['birth_year']; ?>" required/>*</td>
     </tr>
     <td>Country</td>
       <td> 
@@ -228,7 +228,7 @@ if (session_status() == PHP_SESSION_NONE) {
       <td>Email Address</td>
       <td> 
         <input name="emailAddress" type="text" style="width: 200px;" maxlength="200" value="<?php echo
-		$row ['email']; ?>" />*</td>
+		$row ['email']; ?>" required/>*</td>
     </tr>
     <tr style="background-color: #FFFFFF;"> 
       <td> 
