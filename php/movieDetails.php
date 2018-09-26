@@ -100,6 +100,10 @@ $discussion_results = mysqli_query($connection, $discussion_query);
   //start the table in which our user list will be shown
   echo '<table><tr>';
   echo '<th>Post Date</th><th>User Name</th><th>Content</th>';
+  if ($_SESSION['level'] == 'moderator')
+      {
+        echo '<th>Manage</th>';
+      }
   echo '</tr>';
   
   //  loop through the result and display them
@@ -117,6 +121,13 @@ $discussion_results = mysqli_query($connection, $discussion_query);
       }
 
       echo '<td>'.$row['content'].'</td>';
+
+      // delete discusstion link for exclusively moderators
+      if ($_SESSION['level'] == 'moderator')
+      {
+        echo '<td><a href="deletediscussion.php?discussionid='.$row['discussion_id'].'"
+        onclick="return confirm(\'Are you sure you want to delete this discussion?\'); ">Delete</a></td>';
+      }
 
 	  echo '</tr>';
   }
