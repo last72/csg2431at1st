@@ -32,7 +32,7 @@ if (!( $_SESSION['level'] == 'admin'))
   $error_message = '';
 
   // first we'll check if any of our required fields are empty all at once
-  if (empty($moviename) || empty($release_year) || empty($director) || empty($writers) || empty($duration) || empty($summary))
+  if (empty($moviename) || empty($release_year) || empty($director) || empty($writers) || empty($duration))
  {
     $error_message = 'One of the required values was  blank.';
   }
@@ -42,6 +42,15 @@ if (!( $_SESSION['level'] == 'admin'))
    {
      $error_message = 'Your release year is not numeric';
    }
+
+       // now we'll check if the movie already exists in the database
+       $duplicatemovie_query = "SELECT movie_id FROM movies WHERE movie_name = '".$moviename."' AND release_year = '".$release_year."'";
+       $duplicatemovie_results = mysqli_query($connection,$duplicatemovie_query);
+   
+       if (@$duplicatemovie_results->num_rows > 0)
+       {
+         $error_message = 'Movie already exist.';
+       }
 
   // if the error_message variable is not empty (i.e. an error has been found)
   if ($error_message != '')
@@ -56,7 +65,6 @@ if (!( $_SESSION['level'] == 'admin'))
   {
     //  if there was no error, show success message
     // (and them the script continues to the HTML section that displays the results)
-    echo '<p><strong>Form submitted sucessfully!</strong></p>';
 	
 	
 	$query = "UPDATE movies SET summary = '".$summary."', movie_name = '".$moviename."' , release_year = '".$release_year."', director =
@@ -131,8 +139,24 @@ if (!( $_SESSION['level'] == 'admin'))
     <tr style="background-color: #FFFFFF;"> 
       <td>Release year</td>
       <td> 
-        <input name="release_year" type="text" style="width: 200px;" maxlength="20" value="<?php echo $row ['release_year']; ?>" />*</td>
+        <select name="release_year" style="width: 200px;" required>
+          <?php
+
+            for ($i=date("Y"); $i>=date("Y")-1000; $i--)
+            {
+              echo '<option value="'."$i".'"';
+              
+              if ($i == $row ['release_year'])
+              {
+                echo ' selected="selected"';
+              }
+
+              echo '>'."$i".'</option>';
+            }
+          ?>
+        </select>*
     </tr>
+
     <tr style="background-color: #FFFFFF;"> 
       <td>Director</td>
       <td> 

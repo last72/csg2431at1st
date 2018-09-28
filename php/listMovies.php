@@ -40,6 +40,12 @@ if (!isset($_SESSION['level']))
 	  $del_query = 'DELETE FROM movies WHERE movie_id = '.$_GET['del_id'];
     $del_results = mysqli_query($connection,$del_query);
 
+    $del_rating_query = 'DELETE FROM ratings WHERE movie_id = '.$_GET['del_id'];
+    $del_rating_results = mysqli_query($connection,$del_rating_query);
+
+    $del_discussion_query = 'DELETE FROM discussion WHERE movie_id = '.$_GET['del_id'];
+    $del_discussion_results = mysqli_query($connection,$del_discussion_query);
+
   }
   
   $query = "SELECT * FROM movies ORDER BY movie_name";

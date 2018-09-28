@@ -61,6 +61,16 @@ if (!isset($_SESSION['level']))
     $error_message = 'Your duration is not numeric';
   }
 
+    // now we'll check if the movie already exists in the database
+    $duplicatemovie_query = "SELECT movie_id FROM movies WHERE movie_name = '".$moviename."' AND release_year = '".$release_year."'";
+    $duplicatemovie_results = mysqli_query($connection,$duplicatemovie_query);
+
+    if (@$duplicatemovie_results->num_rows > 0)
+    {
+      $error_message = 'Movie already exist.';
+    }
+  
+
   // if the error_message variable is not empty (i.e. an error has been found)
   if ($error_message != '')
   {

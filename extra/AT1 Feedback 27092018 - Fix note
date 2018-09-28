@@ -12,8 +12,8 @@ User management aspects are otherwise implemented and working well.
 [FIXED] Only storing the date of comments, rather than the date and time - making the display of discussion a little less orderable.
 Rating/Discussion aspects are otherwise implemented and working well.
 
-[     ] Can insert duplicate movies (same name and year), but movie adding and editing otherwise working well.
-[     ] Deleting a movie does not delete the ratings and discussion for the movie.
+[FIXED] Can insert duplicate movies (same name and year), but movie adding and editing otherwise working well.
+[FIXED] Deleting a movie does not delete the ratings and discussion for the movie.
 
 Excellent work.
 Good to see evidence of good communication, team work and time management!
