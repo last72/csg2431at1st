@@ -1,0 +1,35 @@
+Student 
+------------
+10458734	TASHI	Mr
+10445178	CHOI	Mr	Woongyeol
+
+Marks
+------------
+User Management:            	4.5/6
+Movie Management:            	5.5/6
+Rating/Discussion Management:  	4.5/5
+Sessions & Efficient Design:   	4/4
+Extras & Advanced:              4/4
+
+Feedback
+------------
+Note - The register link has an extra /php/ in it on some pages.
+
+Guests can view member profiles, while only logged in users should be able to do this.
+Registration is well done, but you don't need to get the password correct to log in - a valid username and any password gets you in.
+Best to use consistent field types when registering and editing - the drop downs are replaced by text fields.
+User management aspects are otherwise implemented and working well.
+
+Average rating should be rounded to 1 decimal place, rather than the whole number.
+Only storing the date of comments, rather than the date and time - making the display of discussion a little less orderable.
+Rating/Discussion aspects are otherwise implemented and working well.
+
+Can insert duplicate movies (same name and year), but movie adding and editing otherwise working well.
+Deleting a movie does not delete the ratings and discussion for the movie.
+
+Excellent work.
+Good to see evidence of good communication, team work and time management!
+Remember to include the readme info/references mentioned in the assignment brief.
+
+Total: 22.5/25
+Grade: HD
