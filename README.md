@@ -26,7 +26,7 @@ Well done immediately changing the access if an admin demotes themselves.
 - [X] Things to check: Delete confirm message when deleting discussions. When user login, current time needs to be bigger than banned_until value. Otherwise, a message shows banned_until time and ban_reason.
 - [X] Expected time to developing: 5 hours.
 * Actual time taken: About 2 Hours (26/09/2018)
-* Feedback from lecturer:
+* Feedback from lecturer: (Fixed 28/09/2018)
 ```
 Just realised – remember to update the registration page to account for the new columns.  At the moment, registering is causing a “Column count doesn't match value count at row 1” error due to the extra columns regarding bans.
 ```

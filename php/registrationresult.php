@@ -113,8 +113,9 @@
 
   // $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-  $query = "INSERT INTO users VALUE ('".$username."', '".$realname."',
-  '".$emailAddress."', '".$birth_year."', '".$country."', '".$password."', 'member')";
+  $query = "INSERT INTO users 
+  SET username = '".$username."', real_name = '".$realname."', email = '".$emailAddress."', 
+  birth_year = '".$birth_year."', country = '".$country."', password = '".$password."', access_level = 'member'";
 
   $result = mysqli_query($connection,$query);
 
