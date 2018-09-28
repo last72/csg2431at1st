@@ -14,6 +14,11 @@ Use import function in myphpadmin to demonstrate development environment.
 - [X] Things to check: Degrading admin should be done when there is more than two admin in db.
 - [X] Expected time to developing: 3 hours.
 * Actual time taken: 1 Hour 16 minutes (19/09/2018)
+* Feedback from lecturer:
+```
+Nice work, it’s looking good.
+Well done immediately changing the access if an admin demotes themselves.
+```
 
 ### Moderator User Level (Mark 9)
 - [X] Feature: Create new access level that has two distint feature on the top of member privilege (Put comment in discussion, rating, view profile, update their profile). 1. Delete any discussion post (including admin, moderator, and member's post). 2. Ban member in other users **php/userDetails.php** page.
@@ -21,6 +26,10 @@ Use import function in myphpadmin to demonstrate development environment.
 - [X] Things to check: Delete confirm message when deleting discussions. When user login, current time needs to be bigger than banned_until value. Otherwise, a message shows banned_until time and ban_reason.
 - [X] Expected time to developing: 5 hours.
 * Actual time taken: About 2 Hours (26/09/2018)
+* Feedback from lecturer:
+```
+Just realised – remember to update the registration page to account for the new columns.  At the moment, registering is causing a “Column count doesn't match value count at row 1” error due to the extra columns regarding bans.
+```
 
 ### Site Statistics (Mark 6)
 - [ ] Feature: Build a statistics page that shows number of users, average user age, number of movies, most discussed movies, and highest average rating movie.
