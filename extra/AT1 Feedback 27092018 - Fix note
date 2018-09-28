@@ -5,11 +5,11 @@ Feedback
 
 [its working] Guests can view member profiles, while only logged in users should be able to do this.
 [FIXED] Registration is well done, but you don't need to get the password correct to log in - a valid username and any password gets you in.
-[     ] Best to use consistent field types when registering and editing - the drop downs are replaced by text fields.
+[FIXED] Best to use consistent field types when registering and editing - the drop downs are replaced by text fields.
 User management aspects are otherwise implemented and working well.
 
-[     ] Average rating should be rounded to 1 decimal place, rather than the whole number.
-[     ] Only storing the date of comments, rather than the date and time - making the display of discussion a little less orderable.
+[FIXED] Average rating should be rounded to 1 decimal place, rather than the whole number.
+[FIXED] Only storing the date of comments, rather than the date and time - making the display of discussion a little less orderable.
 Rating/Discussion aspects are otherwise implemented and working well.
 
 [     ] Can insert duplicate movies (same name and year), but movie adding and editing otherwise working well.

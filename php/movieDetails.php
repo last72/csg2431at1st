@@ -65,7 +65,7 @@ $rating_query = "SELECT AVG(rating) FROM ratings ".'WHERE movie_id ='.$_GET['mov
   // execute the query
 $rating_results = mysqli_query($connection, $rating_query);
 $row = $rating_results->fetch_assoc();
-$avg_rating = round($row['AVG(rating)']);
+$avg_rating = round($row['AVG(rating)'], 1);
 
 if($avg_rating != '0')
 {

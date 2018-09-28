@@ -50,7 +50,7 @@ exit;
     // (and them the script continues to the HTML section that displays the results)
     echo '<p><strong>Form submitted sucessfully!</strong></p>';
 
-    $query = "INSERT INTO discussion SET movie_id = '".$_POST['movie_id']."', username = '".$_SESSION['uname']."', content = '".$_POST['content']."', post_date = '".date("Y-m-d")."'";
+    $query = "INSERT INTO discussion SET movie_id = '".$_POST['movie_id']."', username = '".$_SESSION['uname']."', content = '".$_POST['content']."', post_date = NOW()";
 
 
 

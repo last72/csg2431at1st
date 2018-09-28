@@ -33,7 +33,7 @@ CREATE TABLE `discussion` (
   `movie_id` int(5) NOT NULL,
   `username` varchar(50) NOT NULL,
   `content` varchar(500) NOT NULL,
-  `post_date` date NOT NULL
+  `post_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -41,10 +41,10 @@ CREATE TABLE `discussion` (
 --
 
 INSERT INTO `discussion` (`discussion_id`, `movie_id`, `username`, `content`, `post_date`) VALUES
-(1, 1, 'asmith', 'This movie is good', '2018-08-07'),
-(2, 1, 'jbloggs', 'This movie is not good', '2018-08-07'),
-(3, 2, 'jbloggs', 'I like this movie', '2018-08-07'),
-(4, 3, 'jbloggs', 'I hate this movie', '2018-08-07');
+(1, 1, 'asmith', 'This movie is good', '2018-08-07 15:00:00'),
+(2, 1, 'jbloggs', 'This movie is not good', '2018-08-07 17:00:00'),
+(3, 2, 'jbloggs', 'I like this movie', '2018-08-07 18:00:00'),
+(4, 3, 'jbloggs', 'I hate this movie', '2018-08-07 19:00:00');
 
 -- --------------------------------------------------------
 
