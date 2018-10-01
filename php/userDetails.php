@@ -3,6 +3,12 @@
 session_start();
 
 
+// Check the access level
+if (!isset($_SESSION['level']))
+{
+  $_SESSION['level'] = '';
+}
+
   if ( $_SESSION['level'] == '' )
   {
     header('Location: ../index.php');
