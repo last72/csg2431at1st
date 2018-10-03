@@ -43,9 +43,19 @@ if (!isset($_SESSION['level']))
   //  delete user if del_id GET data exists
   if (isset($_GET['del_id']))
   {
-	  echo 'Delete in progress';
+    echo 'Delete in progress';
+    
+    // delete user account
 	  $del_query = 'DELETE FROM users WHERE username = \''.$_GET['del_id'].'\'';
-	  $del_results = mysqli_query($connection, $del_query);
+    $del_results = mysqli_query($connection, $del_query);
+    
+    // delete user's ratings
+    $delrating_query = "DELETE FROM ratings WHERE username = '".$_GET['del_id']."'";
+    $delrating_result = mysqli_query($connection, $delrating_query);
+
+    // delete user's discussions
+    $deldiscussion_query = "DELETE FROM discussion WHERE username = '".$_GET['del_id']."'";
+    $deldiscussion_result = mysqli_query($connection, $deldiscussion_query);
   }
   
   $query = "SELECT * FROM users ORDER BY username";
