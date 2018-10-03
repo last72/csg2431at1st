@@ -8,6 +8,8 @@ if ( !isset($_SESSION['uname']) || $_SESSION['uname'] == '' )
 {
 	echo '* You are not logged in. Log in to see more options<br />';
 	echo '* <a href="php/listMovies.php">List Movie</a><br />';
+	echo '* <a href="php/advancedsearchform.php">Advanced Search</a><br />';
+
 }
 
 else
@@ -36,6 +38,7 @@ if ( $_SESSION['level'] == 'member' or $_SESSION['level'] == 'moderator')
 	echo '* <a href="php/editUser.php?edit_id='.$_SESSION['uname'].'">Edit Profile</a><br />';
 	echo '* <a href="php/userDetails.php?username='.$_SESSION['uname'].'">View Profile</a><br />';
 }	
+echo '* <a href="php/advancedsearchform.php">Advanced Search</a><br />';
 
 
 

@@ -191,4 +191,20 @@ function ValidatebanuserForm()
 	document.banuser.banreason.focus();
 	return false;
 	}
+
+	alert('Search Term field cannot be blank.');
+
+}
+
+// Validate php/advancedsearchform.php
+
+function ValidateadvancedsearchForm()
+{
+
+	if (document.advancedsearchForm.searchterm.value == '')
+	{
+		alert('Search Term field cannot be blank.');
+	document.advancedsearchForm.searchterm.focus();
+	return false;
+	}
 }

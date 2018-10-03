@@ -14,7 +14,7 @@ if (!isset($_SESSION['level']))
 <!DOCTYPE html>
 <html>
 <head>
-  <title>List Movies</title>
+  <title>Search Movies</title>
   <style type="text/css">
     th,td {border: 1px solid black; width: 150px;}
   </style>

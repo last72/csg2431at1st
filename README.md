@@ -38,7 +38,9 @@ Just realised – remember to update the registration page to account for the ne
 
 ### Advanced Search Capabilities (Mark 6)
 - [ ] Feature: Create advanced search feature that can use director, summary, release year, or duration search.
-* Actual time taken:
+* Actual time taken: 2 Hours (03/10/2018) + alpha
+
+* Things need to be fixed: more than/exact/less than option in duration and release year. (php/advancedsearchresult.php)
 
 ## Weekly works
 
