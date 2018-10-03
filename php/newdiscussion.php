@@ -21,12 +21,12 @@ if (!DBHOST)
 <html>
 <head>
   <title>discussion rating</title>
-	<link rel="stylesheet" type="text/javascript" href="../js/validation.js">
+  <script src="../js/validation.js"></script>
 </head>
 
 <body>
 <h3><strong>Movie Discussion</strong></h3>
-<form name="DiscussiongForm" method="post" action="newdiscussionresult.php" onsubmit="return ValidateMovieForm();">
+<form name="DiscussiongForm" method="post" action="newdiscussionresult.php" onsubmit="return ValidateDiscussiongForm();">
  <input name="movie_id" type="hidden" value="<?php echo $_SESSION['movie_id'];  ?>" />
   <table style="width: 500px; border: 0px;" cellspacing="1" cellpadding="1">
   <tr>
@@ -36,7 +36,7 @@ if (!DBHOST)
     <tr style="background-color: #FFFFFF;"> 
       <td>Comment</td>
       <td> 
-        <textarea name="content" type="text" style="width: 200px;" maxlength="100" required></textarea>*</td>
+        <textarea name="content" type="text" style="width: 200px;" maxlength="100" ></textarea>*</td>
     </tr>
 
     <tr style="background-color: #FFFFFF;"> 

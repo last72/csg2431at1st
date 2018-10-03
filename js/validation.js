@@ -1,4 +1,5 @@
 //User php/registration.php validation
+//User php/editUser.php validation
 function ValidateUserForm()
     {
 			if (document.UserForm.username.value == '')
@@ -133,7 +134,7 @@ function ValidateMovieForm()
 	return true;
 }
 
-// Validate php/newmovierigi.php form
+// Validate php/accesslevelchange.php form
 function ValidateaccesslevelForm()
 {
 	if (document.accesslevelchange.accesslevel.value == '')
@@ -143,4 +144,51 @@ function ValidateaccesslevelForm()
 	return false;
 	}
 
+}
+
+// Validate php/newdiscussion.php form
+function ValidateDiscussiongForm()
+{
+	if (document.DiscussiongForm.content.value == '')
+	{
+		alert('Content field cannot be blank.');
+	document.DiscussiongForm.content.focus();
+	return false;
+	}
+}
+
+// Validate php/newrating.php form
+function ValidateratingForm()
+{
+	if (document.ratingForm.rating.value == '')
+	{
+		alert('Rating field cannot be blank.');
+	document.ratingForm.rating.focus();
+	return false;
+	}
+}
+
+// Validate php/userban.php form
+function ValidatebanuserForm()
+{
+	if (document.banuser.banhours.value == '')
+	{
+		alert('Ban hours field cannot be blank.');
+	document.banuser.banhours.focus();
+	return false;
+	}
+
+	if (isNaN(document.banuser.banhours.value))
+	{
+		alert('Ban hours field must be a number.');
+	document.UserForm.banhours.focus();
+	return false;
+	}
+
+	if (document.banuser.banreason.value == '')
+	{
+		alert('Ban Reason field cannot be blank.');
+	document.banuser.banreason.focus();
+	return false;
+	}
 }

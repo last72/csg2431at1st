@@ -26,7 +26,7 @@ if (!isset($_SESSION['level']))
 <html>
 <head>
   <title>Movie Registration Form</title>
-	<link rel="stylesheet" type="text/javascript" href="../js/validation.js">
+  <script src="../js/validation.js"></script>
 </head>
 
 <body>

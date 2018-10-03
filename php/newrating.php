@@ -21,12 +21,12 @@ if (!DBHOST)
 <html>
 <head>
   <title>Leave rating</title>
-	<link rel="stylesheet" type="text/javascript" href="../js/validation.js">
+  <script src="../js/validation.js"></script>
 </head>
 
 <body>
 <h3><strong>Movie Rating</strong></h3>
-<form name="ratingForm" method="post" action="newratingresult.php" onsubmit="return ValidateMovieForm();">
+<form name="ratingForm" method="post" action="newratingresult.php" onsubmit="return ValidateratingForm();">
  <input name="movie_id" type="hidden" value="<?php echo $_SESSION['movie_id'];  ?>" />
   <table style="width: 500px; border: 0px;" cellspacing="1" cellpadding="1">
   <tr>

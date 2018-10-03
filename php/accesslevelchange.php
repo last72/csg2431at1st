@@ -20,7 +20,7 @@ if (!DBHOST)
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/javascript" href="../js/validation.js">
+  <script src="../js/validation.js"></script>
 </head>
 
 <body>

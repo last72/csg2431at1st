@@ -25,7 +25,7 @@ if (!DBHOST)
 
 <body>
 <h3><strong>Ban user</strong></h3>
-<form name="banuser" method="post" action="userbanresult.php" onsubmit="return ValidateaccesslevelForm();">
+<form name="banuser" method="post" action="userbanresult.php" onsubmit="return ValidatebanuserForm();">
 
 <input name="username" type="hidden" value="<?php echo $_SESSION['userdetail'];  ?>" />
 <p>Ban member for: <input type="number" name="banhours" required/> hours.<br/>

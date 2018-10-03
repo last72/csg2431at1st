@@ -170,6 +170,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <html>
 <head>
   <title>Edit User Form</title>
+  <script src="../js/validation.js"></script>
 </head>
 
 <body>
