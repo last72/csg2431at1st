@@ -31,6 +31,12 @@ exit;
   {
     $error_message = 'rating was blank.';
   }
+
+    // Check the range of rating
+    if ($rating < 0 || $rating >10)
+    {
+      $error_message = 'Rating needs to be between 1 to 10.';
+    }
     
   // Check the rating is number or not.
   elseif (!is_numeric($rating))
