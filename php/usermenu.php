@@ -23,7 +23,9 @@ if ( $_SESSION['level'] == 'admin' )
 
 	echo '* <a href="php/newmovieregi.php">New Movie</a><br />';
 	echo '* <a href="php/listMovies.php">List Movie</a><br />';
+	echo '* <a href="php/statistics.php">Site statistics</a><br />';
 
+	
 }
 
 // moderator menu

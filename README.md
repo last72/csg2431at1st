@@ -32,9 +32,9 @@ Just realised – remember to update the registration page to account for the ne
 ```
 
 ### Site Statistics (Mark 6)
-- [ ] Feature: Build a statistics page that shows number of users, average user age, number of movies, most discussed movies, and highest average rating movie.
-- [ ] Access level: Admin exclusive.
-* Actual time taken:
+- [X] Feature: Build a statistics page that shows number of users, average user age, number of movies, most discussed movies, and highest average rating movie.
+- [X] Access level: Admin exclusive.
+* Actual time taken: About 2 Hours (03/10/2018)
 
 ### Advanced Search Capabilities (Mark 6)
 - [ ] Feature: Create advanced search feature that can use director, summary, release year, or duration search.

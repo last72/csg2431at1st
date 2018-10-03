@@ -19,6 +19,7 @@ if ( $_SESSION['level'] == 'admin' )
 {
 	echo '<li class="nav-item"><a class="nav-link" href="listUsers.php">List User</a></li><br />';
 	echo '<li class="nav-item"><a class="nav-link" href="newmovieregi.php">New Movie</a></li><br />';
+	echo '<li class="nav-item"><a class="nav-link" href="statistics.php">Site statistics</a></li><br />';
 }
 
 ?>
