@@ -16,6 +16,8 @@ Test user account information
 - ID: 2, PW: 2, access_level: admin
 - ID: 3, PW: 3, access_level: moderator
 
+The version control has done using github. recent commits can be viewed in **extra/Commits last72_csg2431at1st 04102018.pdf**
+
 
 ### Access Level Changing (Mark 4)
 - [X] Feature: change access level of user to member, moderator, or admin in **php/userDetails.php** page.
@@ -51,10 +53,6 @@ Just realised – remember to update the registration page to account for the ne
 
 * Things need to be fixed: more than/exact/less than option in duration and release year. (php/advancedsearchresult.php) - Fixed (04/10/2018)
 
-
-
-
-
 ## Built With
 
 * [Xammp](https://www.apachefriends.org/index.html) - Main developing software.
@@ -62,11 +60,10 @@ Just realised – remember to update the registration page to account for the ne
 * [Github desktop](https://desktop.github.com/) - To collaborate and keep the versions.
 * [Chrome](https://www.google.com/chrome/) - To test end-user experience.
 
-# Problems
-
-# Solved issues
-
 # Testing account information
+- ID: 1, PW: 1, access_level: member
+- ID: 2, PW: 2, access_level: admin
+- ID: 3, PW: 3, access_level: moderator
 * Username: admin, Password: admin
 * Username: member, Password: member
  
