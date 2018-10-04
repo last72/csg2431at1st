@@ -37,8 +37,8 @@ Just realised – remember to update the registration page to account for the ne
 * Actual time taken: About 2 Hours (03/10/2018)
 
 ### Advanced Search Capabilities (Mark 6)
-- [ ] Feature: Create advanced search feature that can use director, summary, release year, or duration search.
-* Actual time taken: 2 Hours (03/10/2018) + alpha
+- [X] Feature: Create advanced search feature that can use director, summary, release year, or duration search.
+* Actual time taken: 2 Hours (03/10/2018) + 30 Minutes (04/10/2018)
 
 * Things need to be fixed: more than/exact/less than option in duration and release year. (php/advancedsearchresult.php)
 
