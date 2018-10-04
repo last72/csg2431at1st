@@ -93,7 +93,7 @@ if (!( $_SESSION['level'] == 'admin'))
 
 
   echo '<tr>';
-  echo '<td>Average User Age:</td>';
+  echo '<td>Average User Age:<br/>(based on birth year)</td>';
   echo '<td>';
 
   echo $averageuserage_inage;
