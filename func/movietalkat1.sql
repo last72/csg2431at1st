@@ -116,8 +116,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`username`, `real_name`, `email`, `birth_year`, `country`, `password`, `access_level`, `banned_until`, `ban_reason`) VALUES
-('1', '', '', 0, '', '1', 'member', '0000-00-00 00:00:00', ''),
-('2', '', '', 0, '', '2', 'admin', '0000-00-00 00:00:00', ''),
+('1', '', '', 1990, '', '1', 'member', '0000-00-00 00:00:00', ''),
+('2', '', '', 2000, '', '2', 'admin', '0000-00-00 00:00:00', ''),
 ('3', '3 is number', 'a@a.com', 1999, '3', '3', 'moderator', '0000-00-00 00:00:00', ''),
 ('adams', 'Kushal', 'kushalp169@gmail.com', 1994, 'United States', 'admas', 'Admin', '0000-00-00 00:00:00', ''),
 ('admin', 'admin', '11@a.com', 1998, 'United States', '$2y$10$l.QqVO3NUVweKk58XvHviu.Mv7f.ApjTJx7wh4YO6tS', 'member', '0000-00-00 00:00:00', ''),
