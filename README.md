@@ -1,12 +1,21 @@
 # csg2431at1st
 This repository is made for CSG2431 AT2 based on [AT1](https://github.com/last72/csg2431at1st/releases/tag/v1.0)
 The folder need to be deployed in development folder (in xammp, htdoc folder).
+Woongyeol Choi, Student email: wchoi0@our.ecu.ecu.au, Student number: 10445178
 
 ## Database
 The SQL Database file is **movietalkat1.sql** and it's under **func** folder.
 Use import function in myphpadmin to demonstrate development environment.
 
-## Regarding to Assessement, Requirements
+Create a new database called **movietalkat1** in phpMyAdmin and import the SQL.
+
+## Acknowledgments
+
+Test user account information
+- ID: 1, PW: 1, access_level: member
+- ID: 2, PW: 2, access_level: admin
+- ID: 3, PW: 3, access_level: moderator
+
 
 ### Access Level Changing (Mark 4)
 - [X] Feature: change access level of user to member, moderator, or admin in **php/userDetails.php** page.
@@ -40,17 +49,11 @@ Just realised – remember to update the registration page to account for the ne
 - [X] Feature: Create advanced search feature that can use director, summary, release year, or duration search.
 * Actual time taken: 2 Hours (03/10/2018) + 30 Minutes (04/10/2018)
 
-* Things need to be fixed: more than/exact/less than option in duration and release year. (php/advancedsearchresult.php)
-
-## Weekly works
+* Things need to be fixed: more than/exact/less than option in duration and release year. (php/advancedsearchresult.php) - Fixed (04/10/2018)
 
 
-## Authors
 
-* **Woongyeol Choi** - *Web Developer* - [last72](https://github.com/last72/)
-Student email: wchoi0@our.ecu.ecu.au, Student number: 10445178
 
-## Acknowledgments
 
 ## Built With
 
@@ -78,3 +81,9 @@ Example Sitemap
 * ```require '../func/dbconnection.php';``` to Connect DB.
 * ```mysqli_query($connection,$query);``` to use SQL query.
 * ```mysqli_error($connection)``` to show db error.
+
+
+# Author
+
+* **Woongyeol Choi** - *Web Developer* - [last72](https://github.com/last72/)
+Student email: wchoi0@our.ecu.ecu.au, Student number: 10445178
