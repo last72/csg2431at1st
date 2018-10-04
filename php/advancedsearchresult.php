@@ -154,7 +154,6 @@ $query = "SELECT * FROM movies
         $durationvalue_query."
         ORDER BY movie_name";
 
-  echo $query;  
   // execute the query
   $results = mysqli_query($connection, $query);
   
