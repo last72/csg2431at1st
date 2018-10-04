@@ -51,11 +51,11 @@ if (!isset($_SESSION['level']))
     <td>
         <select name="releaseyear">
             <option value="notimportant" selected="selected">Not Important</option>
-            <option nvalue="lessthan">Less Than</option>
+            <option value="lessthan">Less Than</option>
             <option value="exactly">Exactly</option>
             <option value="morethan">More Than</option>
         </select>
-        <input type="text" name="releaseyearvalue" />
+        <input type="number" name="releaseyearvalue" />
     </td>
   </tr>
   <tr>
@@ -67,7 +67,7 @@ if (!isset($_SESSION['level']))
             <option value="exactly">Exactly</option>
             <option value="morethan">More Than</option>
         </select>
-        <input type="text" name="durationvalue" />
+        <input type="number" name="durationvalue" />
 
     </td>
   </tr>
