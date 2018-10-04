@@ -59,7 +59,7 @@ if (!( $_SESSION['level'] == 'admin'))
     $numberofusersresults = mysqli_query($connection, $numberofusers_query);
 
   
-  echo '<table>';
+  echo '<table style="width:80%">';
 
   // First row, shows total number of user and each access level.
   echo '<tr>';
