@@ -22,6 +22,8 @@ SET time_zone = "+00:00";
 -- Database: `movietalkat1`
 --
 
+CREATE DATABASE movietalkat1;
+
 -- --------------------------------------------------------
 
 --

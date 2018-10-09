@@ -6,8 +6,7 @@ Woongyeol Choi, Student email: wchoi0@our.ecu.ecu.au, Student number: 10445178
 ## Database
 The SQL Database file is **movietalkat1.sql** and it's under **func** folder.
 Use import function in myphpadmin to demonstrate development environment.
-
-Create a new database called **movietalkat1** in phpMyAdmin and import the SQL.
+Remove previous **movietalkat1** in phpMyAdmin and import the SQL if you have it.
 
 ## Acknowledgments
 
