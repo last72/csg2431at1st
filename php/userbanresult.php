@@ -49,14 +49,19 @@ else
     $error_message = 'banhours is not number';
   }
 
+  if (!filter_var($banhours, FILTER_VALIDATE_INT))
+  {
+    $error_message = 'banhours is not interger.';
+  }
+
   if($banhours > 876000)
   {
       $error_message = 'Max ban time is 100 years.';
   }
 
-  if($banhours < 0)
+  if($banhours < 1)
   {
-      $error_message = 'Ban time cannot be negative value';
+      $error_message = 'Ban time cannot be less than 1 hour';
   }
 
   if (empty($banreason))
