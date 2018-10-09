@@ -51,7 +51,7 @@ I notice you can ban people for negative numbers of hours, so the validation cou
 - [X] Feature: Build a statistics page that shows number of users, average user age, number of movies, most discussed movies, and highest average rating movie.
 - [X] Access level: Admin exclusive.
 * Actual time taken: About 2 Hours (03/10/2018)
-* Feedback from lecturer:
+* Feedback from lecturer: (Fixed 09/10/2018)
 ```
 The statistics page is working well, although some parts could be tweaked a little:
 When determining most discussed and most highly rated movie, you can do it in one query by including a join so that you can select the movie name at the same time.

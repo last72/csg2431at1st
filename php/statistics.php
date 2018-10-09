@@ -125,7 +125,9 @@ if (!( $_SESSION['level'] == 'admin'))
    // Fourth row, shows Most discussed movie.
 
     // query for Most discussed movie
-    $mostdiscussedmovie_query = "SELECT COUNT(discussion_id), movie_id FROM discussion GROUP BY movie_id";
+    $mostdiscussedmovie_query = "SELECT movie_name, count(discussion_id) AS discussions 
+    FROM discussion INNER JOIN movies ON movies.movie_id = discussion.movie_id GROUP BY movie_name  
+    ORDER BY `discussions`  DESC";
 
     // execute the query
     $mostdiscussedmovieresults = mysqli_query($connection, $mostdiscussedmovie_query);
@@ -133,23 +135,14 @@ if (!( $_SESSION['level'] == 'admin'))
     //get single row
     $mostdiscussedmovie_row = $mostdiscussedmovieresults->fetch_assoc();
 
-    // query for Most discussed movie name
-    $mostdiscussedmoviename_query = "SELECT movie_name FROM movies WHERE movie_id = '".$mostdiscussedmovie_row['movie_id']."'";
-
-    // execute the query
-    $mostdiscussedmovienameresults = mysqli_query($connection, $mostdiscussedmoviename_query);
-
-    //get single row
-    $mostdiscussedmoviename_row = $mostdiscussedmovienameresults->fetch_assoc();
-
     
   
   echo '<tr>';
   echo '<td>Most discussed movie:</td>';
   echo '<td>';
 
-  echo $mostdiscussedmoviename_row['movie_name'];
-  echo '<br/>('.$mostdiscussedmovie_row['COUNT(discussion_id)'].' discussed posts)';
+  echo $mostdiscussedmovie_row['movie_name'];
+  echo '<br/>('.$mostdiscussedmovie_row['discussions'].' discussed posts)';
 
   echo '</td>';
   echo '</tr>';
@@ -157,7 +150,9 @@ if (!( $_SESSION['level'] == 'admin'))
     // Fifth row, shows highest rated movie.
 
     // query for Highest rated movie
-    $mostratedmovie_query = "SELECT AVG(rating), movie_id FROM ratings GROUP BY movie_id ORDER BY AVG(rating) DESC";
+    $mostratedmovie_query = "SELECT AVG(rating) AS ratings, movie_name 
+    FROM ratings INNER JOIN movies ON ratings.movie_id = movies.movie_id GROUP BY movie_name 
+    ORDER BY ratings DESC";
 
     // execute the query
     $mostratedmovieresults = mysqli_query($connection, $mostratedmovie_query);
@@ -165,23 +160,14 @@ if (!( $_SESSION['level'] == 'admin'))
     //get single row
     $mostratedmovie_row = $mostratedmovieresults->fetch_assoc();
 
-    // query for highest rated movie name
-    $mostratedmoviename_query = "SELECT movie_name FROM movies WHERE movie_id = '".$mostratedmovie_row['movie_id']."'";
-
-    // execute the query
-    $mostratedmovienameresults = mysqli_query($connection, $mostratedmoviename_query);
-
-    //get single row
-    $mostratedmoviename_row = $mostratedmovienameresults->fetch_assoc();
-
     
   
   echo '<tr>';
   echo '<td>Most discussed movie:</td>';
   echo '<td>';
 
-  echo $mostratedmoviename_row['movie_name'];
-  echo '<br/>('.round($mostratedmovie_row['AVG(rating)'], 1).' average rating)';
+  echo $mostratedmovie_row['movie_name'];
+  echo '<br/>('.round($mostratedmovie_row['ratings'], 1).' average rating)';
 
   echo '</td>';
   echo '</tr>';
