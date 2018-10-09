@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 17, 2018 at 10:45 AM
+-- Generation Time: Oct 09, 2018 at 04:28 PM
 -- Server version: 10.1.24-MariaDB
 -- PHP Version: 7.1.6
 
@@ -46,7 +46,13 @@ INSERT INTO `discussion` (`discussion_id`, `movie_id`, `username`, `content`, `p
 (1, 1, 'asmith', 'This movie is good', '2018-08-07 15:00:00'),
 (2, 1, 'jbloggs', 'This movie is not good', '2018-08-07 17:00:00'),
 (3, 2, 'jbloggs', 'I like this movie', '2018-08-07 18:00:00'),
-(4, 3, 'jbloggs', 'I hate this movie', '2018-08-07 19:00:00');
+(4, 3, 'jbloggs', 'I hate this movie', '2018-08-07 19:00:00'),
+(5, 1, '2', 'This movie is good\r\n', '2018-10-09 16:20:38'),
+(6, 1, '2', 'This movie is good', '2018-10-09 16:20:40'),
+(7, 1, '2', 'This movie is good', '2018-10-09 16:20:42'),
+(8, 3, '2', 'This movie is good\r\n', '2018-10-09 16:20:50'),
+(9, 3, '2', 'This movie is good', '2018-10-09 16:20:52'),
+(10, 2, '2', 'This movie is good', '2018-10-09 16:21:15');
 
 -- --------------------------------------------------------
 
@@ -71,7 +77,8 @@ CREATE TABLE `movies` (
 INSERT INTO `movies` (`movie_id`, `movie_name`, `release_year`, `director`, `writers`, `duration`, `summary`) VALUES
 (1, 'Jaws 2', 1978, 'Jeannot Szwarc', 'Peter Benchler, Carl Gottlieb', 116, 'Years after the shark attacks that left Amity Island reeling, Sheriff Martin Brody (Roy Scheider) finds new trouble lurking in the waters. Mayor Vaughn (Murray Hamilton) wants to rid the beach town of the stain on its reputation.'),
 (2, 'Inception', 2010, 'Christoper Nolan', 'Christoper Nolan', 148, 'Dom Cobb (Leonardo DiCaprio) is a thief with the rare ability to enter people\'s dreams and steal their secrets from their subconscious. His skill has made him a hot commodity in the world of corporate espionage but has also cost him everything he loves.'),
-(3, 'Avartar', 2009, 'James Cameron', 'James Cameron', 162, 'On the lush alien world of Pandora live the Na\'vi, beings who appear primitive but are highly evolved. Because the planet\'s environment is poisonous, human/Na\'vi hybrids, called Avatars, must link to human minds to allow for free movement on Pandora.');
+(3, 'Avartar', 2009, 'James Cameron', 'James Cameron', 162, 'On the lush alien world of Pandora live the Na\'vi, beings who appear primitive but are highly evolved. Because the planet\'s environment is poisonous, human/Na\'vi hybrids, called Avatars, must link to human minds to allow for free movement on Pandora.'),
+(4, 'venum', 2018, 'Steve', 'Steve', 120, 'Dark spiderman');
 
 -- --------------------------------------------------------
 
@@ -90,9 +97,12 @@ CREATE TABLE `ratings` (
 --
 
 INSERT INTO `ratings` (`movie_id`, `username`, `rating`) VALUES
+(1, '2', 10),
 (1, 'asmith', 6),
 (1, 'jbolggs', 8),
+(2, '2', 1),
 (2, 'jbloggs', 4),
+(3, '2', 1),
 (3, 'jbloggs', 7);
 
 -- --------------------------------------------------------
@@ -126,8 +136,8 @@ INSERT INTO `users` (`username`, `real_name`, `email`, `birth_year`, `country`, 
 ('asmith', 'Adam Smith', 'smitho@gmail.com', 1984, '', 'abc123', 'member', '0000-00-00 00:00:00', ''),
 ('editor', 'editor', '11@a.com', 1998, 'United States', '$2y$10$YbSch4indqWY8FSA81ykU.MV3Qgkb6SXL/S45aPGrg4', 'member', '0000-00-00 00:00:00', ''),
 ('jbloggs', 'Joe Bloggs', 'Howard', 1990, 'Australia', 'swordfish99', 'member', '0000-00-00 00:00:00', ''),
-('member', 'member is my', '11@a.com', 2000, 'United States', '$2y$10$MOqlMDsvJqzfwkskKq5EPO0rV6Je9hEfwnA90VDcXBe', 'moderator', '0000-00-00 00:00:00', '');
-
+('member', 'member is my', '11@a.com', 2000, 'United States', '$2y$10$MOqlMDsvJqzfwkskKq5EPO0rV6Je9hEfwnA90VDcXBe', 'moderator', '0000-00-00 00:00:00', ''),
+('sean', 'sean jobs', 'sean_ff@gmail.com', 1991, 'Australia', 'seanisgood', 'member', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -165,12 +175,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `discussion`
 --
 ALTER TABLE `discussion`
-  MODIFY `discussion_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `discussion_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `movies`
 --
 ALTER TABLE `movies`
-  MODIFY `movie_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
+  MODIFY `movie_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
