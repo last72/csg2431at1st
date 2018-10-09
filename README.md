@@ -42,16 +42,31 @@ Well done immediately changing the access if an admin demotes themselves.
 Just realised – remember to update the registration page to account for the new columns.  At the moment, registering is causing a “Column count doesn't match value count at row 1” error due to the extra columns regarding bans.
 ```
 
+Second feedback on 08/10/2018
+```
+I notice you can ban people for negative numbers of hours, so the validation could be tweaked there.
+```
+
 ### Site Statistics (Mark 6)
 - [X] Feature: Build a statistics page that shows number of users, average user age, number of movies, most discussed movies, and highest average rating movie.
 - [X] Access level: Admin exclusive.
 * Actual time taken: About 2 Hours (03/10/2018)
+* Feedback from lecturer:
+```
+The statistics page is working well, although some parts could be tweaked a little:
+When determining most discussed and most highly rated movie, you can do it in one query by including a join so that you can select the movie name at the same time.
+If using multiple queries, it would be best to add an ORDER BY to the first query to ensure that the first row is indeed the one with the most discussion.
+```
 
 ### Advanced Search Capabilities (Mark 6)
 - [X] Feature: Create advanced search feature that can use director, summary, release year, or duration search.
 * Actual time taken: 2 Hours (03/10/2018) + 30 Minutes (04/10/2018)
-
 * Things need to be fixed: more than/exact/less than option in duration and release year. (php/advancedsearchresult.php) - Fixed (04/10/2018)
+* Feedback from lecturer:
+```
+The advanced search is working well.  Did you consider making the values
+of the drop down list options actually “=”, “<” and “>”, so that you could use them directly in the query rather than needing a function to determine the correct value?
+```
 
 ## Built With
 
