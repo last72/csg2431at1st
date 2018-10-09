@@ -62,7 +62,7 @@ If using multiple queries, it would be best to add an ORDER BY to the first quer
 - [X] Feature: Create advanced search feature that can use director, summary, release year, or duration search.
 * Actual time taken: 2 Hours (03/10/2018) + 30 Minutes (04/10/2018)
 * Things need to be fixed: more than/exact/less than option in duration and release year. (php/advancedsearchresult.php) - Fixed (04/10/2018)
-* Feedback from lecturer:
+* Feedback from lecturer: (Fixed 09/10/2018)
 ```
 The advanced search is working well.  Did you consider making the values
 of the drop down list options actually “=”, “<” and “>”, so that you could use them directly in the query rather than needing a function to determine the correct value?

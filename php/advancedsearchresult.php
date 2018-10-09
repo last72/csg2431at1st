@@ -73,25 +73,6 @@ if (isset($_POST['plotsummary']))
     $plotsummary_query = "OR summary LIKE '%".$searchterm."%' ";
 }
 
-function strcompair($statement)
-{
-    if ($statement == 'lessthan')
-    {
-        return '<';
-    }
-    else if ($statement == 'exactly')
-    {
-        return '=';
-    }
-    else if ($statement == 'morethan')
-    {
-        return '>';
-    }
-    else
-    {
-        exit;
-    }
-}
 
 
     // we create this variable and set it to an empty string... if it remains empty by the end
@@ -107,7 +88,7 @@ if (isset($_POST['releaseyear']) && $_POST['releaseyear'] != 'notimportant')
     if (isset($_POST['releaseyearvalue']) && $_POST['releaseyearvalue'] != '')
     {
         $releaseyearvalue = $_POST['releaseyearvalue'];
-        $releaseyearvalue_query = "AND release_year ".strcompair($releaseyear).$releaseyearvalue." ";
+        $releaseyearvalue_query = "AND release_year ".$releaseyear.$releaseyearvalue." ";
     }
     else
     {
@@ -125,7 +106,7 @@ if (isset($_POST['duration']) && $_POST['duration'] != 'notimportant')
     if (isset($_POST['durationvalue']) && $_POST['durationvalue'] != '')
     {
         $durationvalue = $_POST['durationvalue'];
-        $durationvalue_query = "AND duration ".strcompair($duration).$durationvalue." ";
+        $durationvalue_query = "AND duration ".$duration.$durationvalue." ";
     }
     else
     {
