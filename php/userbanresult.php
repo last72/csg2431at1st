@@ -54,6 +54,11 @@ else
       $error_message = 'Max ban time is 100 years.';
   }
 
+  if($banhours < 0)
+  {
+      $error_message = 'Ban time cannot be negative value';
+  }
+
   if (empty($banreason))
   {
     $error_message = 'banreason was blank.';

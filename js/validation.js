@@ -171,9 +171,18 @@ function ValidateratingForm()
 // Validate php/userban.php form
 function ValidatebanuserForm()
 {
+
+
 	if (document.banuser.banhours.value == '')
 	{
 		alert('Ban hours field cannot be blank.');
+	document.banuser.banhours.focus();
+	return false;
+	}
+
+	if (document.banuser.banhours.value < 0)
+	{
+		alert('Ban hours field cannot be negative.');
 	document.banuser.banhours.focus();
 	return false;
 	}

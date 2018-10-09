@@ -42,7 +42,7 @@ Well done immediately changing the access if an admin demotes themselves.
 Just realised – remember to update the registration page to account for the new columns.  At the moment, registering is causing a “Column count doesn't match value count at row 1” error due to the extra columns regarding bans.
 ```
 
-Second feedback on 08/10/2018
+Second feedback on 08/10/2018 (Fixed 09/10/2018)
 ```
 I notice you can ban people for negative numbers of hours, so the validation could be tweaked there.
 ```
