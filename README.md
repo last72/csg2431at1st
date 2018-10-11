@@ -81,6 +81,37 @@ Received on 11/10/2018
 * [Github desktop](https://desktop.github.com/) - To collaborate and keep the versions.
 * [Chrome](https://www.google.com/chrome/) - To test end-user experience.
 
+## Test sheet 11/10/2018
+* Access Level Changing
+  * Only admin can see access level change form in user detail. Moderator, member and non-member can't see the form and can't access to it.
+  * Access level can be changed one to another (admin to moderator, admin to member, moderator to admin, moderator to member, member to admin, member to moderator).
+  * Also, It won't change their access level to member or moderator if there is no other admin.
+* Moderator User Level
+  * Moderator can put comment in discussion, rating, view profile, update their profile
+  * Deleting discussion only visiable to moderator and admin, member and non-member can't access to it even if they type the address directly.
+  * Ban user only accept interget that bigger than 1.
+  * Ban user function blocks from logging in blocked user.
+  * They can't block admin or moderator, they only can block members.
+* Site Statistics
+  * Statistics page shows number of total user, admin, moderator, and member.
+  * It shows average user age based on user's birth year. It rounded in hundredths.
+  * It shows number of movies.
+  * It shows most discussed movie based on number of posts.
+  * it shows highest rated movie and shows average rating.
+  * Only admin can access to it. Moderator, member and non-member can't access.
+* Advanced Search Capabilities
+  * Without selecting any option, it work as normal search.
+  * it include director/writers or plot summary if user select the check box.
+  * Release year and duration field only accept number.
+  * Also, it shows error when it isn't not important and field is empty.
+  * Multiple option search works such as search term and release year mixed. It will only show the result that meet every criteria.
+  * Anyone can use this including admin, moderator, member and non-member.
+* Other feature
+  * Register user works.
+  * Register movie works.
+  * View and edit profile works.
+  * See other user's profile through discussion page works.
+
 # Testing account information
 - ID: 1, PW: 1, access_level: member
 - ID: 2, PW: 2, access_level: admin
