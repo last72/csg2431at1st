@@ -67,6 +67,13 @@ The advanced search is working well.  Did you consider making the values
 of the drop down list options actually “=”, “<” and “>”, so that you could use them directly in the query rather than needing a function to determine the correct value?
 ```
 
+## Final feedback from lecture
+```
+Nice work, all of the issues mentioned have been fixed up well.
+Didn’t spot any other issues, but of course I am not looking at the files as thoroughly as when marking.  Be sure to always have a thorough test of all functionality and double check the brief for any little things that may have been overlooked.
+```
+Received on 11/10/2018
+
 ## Built With
 
 * [Xammp](https://www.apachefriends.org/index.html) - Main developing software.
