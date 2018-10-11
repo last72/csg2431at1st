@@ -121,6 +121,7 @@ if (session_status() == PHP_SESSION_NONE) {
   SET real_name = '".$realname."', 
   email = '".$emailAddress."', 
   birth_year = '".$birth_year."', 
+  password = '".$password."',
   country =  '".$country."' 
 
   WHERE username = '".$_GET['edit_id']."'";
