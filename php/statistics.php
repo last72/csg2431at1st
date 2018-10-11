@@ -163,7 +163,7 @@ if (!( $_SESSION['level'] == 'admin'))
     
   
   echo '<tr>';
-  echo '<td>Most discussed movie:</td>';
+  echo '<td>Highest rated movie:</td>';
   echo '<td>';
 
   echo $mostratedmovie_row['movie_name'];
