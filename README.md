@@ -126,6 +126,23 @@ Current Sitemap
 Example Sitemap
 ![Sitemap](/img/sitemapexample.png?raw=true "exampleSitemap")
 
+# Site layout
+Home
+![Layout](/img/Layout1.png?raw=true "Layout")
+
+Sign in
+![Layout](/img/Layout2.png?raw=true "Layout")
+
+Home (Member)
+![Layout](/img/Layout3.png?raw=true "Layout")
+
+List Movie (Admin)
+![Layout](/img/Layout4.png?raw=true "Layout")
+
+Movie Details (Admin)
+![Layout](/img/Layout5.png?raw=true "Layout")
+
+
 # Syntax
 * ```require '../func/dbconnection.php';``` to Connect DB.
 * ```mysqli_query($connection,$query);``` to use SQL query.
